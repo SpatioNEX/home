@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpatioAI Technologies | Geospatial Intelligence for Climate Resilience</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #0f4c75 0%, #3282b8 50%, #bbe1fa 100%);
+        }
+        .map-container {
+            height: 500px;
+            background-image: url('https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-4.0.3');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .map-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 76, 117, 0.6);
+        }
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .globe-spinner {
+            animation: spin 8s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .language-selector:hover .language-dropdown {
+            display: block;
+        }
+        .team-photo-placeholder {
+            background: linear-gradient(135deg, #0f4c75 0%, #3282b8 100%);
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-globe-africa text-2xl text-blue-600 mr-2"></i>
+                        <span class="text-xl font-bold text-blue-800">SpatioAI</span>
+                    </div>
+                    <div class="hidden md:ml-10 md:flex md:space-x-8">
+                        <a href="#solutions" class="text-blue-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Solutions</a>
+                        <a href="#technology" class="text-blue-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Technology</a>
+                        <a href="#team" class="text-blue-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Team</a>
+                        <a href="#impact" class="text-blue-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Impact</a>
+                        <a href="#contact" class="text-blue-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-4">
+                    <div class="language-selector relative">
+                        <button class="flex items-center text-blue-900 hover:text-blue-600">
+                            <i class="fas fa-language mr-1"></i>
+                            <span>English</span>
+                            <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </button>
+                        <div class="language-dropdown hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50">Swahili</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50">Kikuyu</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50">Luo</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50">Kalenjin</a>
+                        </div>
+                    </div>
+                    <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300">Demo Access</a>
+                </div>
+                <div class="-mr-2 flex items-center md:hidden">
+                    <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-blue-900 hover:text-blue-600 hover:bg-blue-50 focus:outline-none">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div class="hidden md:hidden" id="mobile-menu">
+            <div class="pt-2 pb-3 space-y-1">
+                <a href="#solutions" class="block px-3 py-2 text-base font-medium text-blue-900 hover:text-blue-600 hover:bg-blue-50">Solutions</a>
+                <a href="#technology" class="block px-3 py-2 text-base font-medium text-blue-900 hover:text-blue-600 hover:bg-blue-50">Technology</a>
+                <a href="#team" class="block px-3 py-2 text-base font-medium text-blue-900 hover:text-blue-600 hover:bg-blue-50">Team</a>
+                <a href="#impact" class="block px-3 py-2 text-base font-medium text-blue-900 hover:text-blue-600 hover:bg-blue-50">Impact</a>
+                <a href="#contact" class="block px-3 py-2 text-base font-medium text-blue-900 hover:text-blue-600 hover:bg-blue-50">Contact</a>
+                <div class="px-3 py-2">
+                    <a href="#" class="block w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium text-center transition duration-300">Demo Access</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
+            <div class="md:flex items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">AI-Powered Geospatial Intelligence for Climate Resilience</h1>
+                    <p class="text-xl mb-8 opacity-90">Turning Earth-observation data into actionable intelligence for climate-resilient natural-resource management in Kenya</p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#contact" class="bg-white text-blue-800 hover:bg-blue-50 px-6 py-3 rounded-md text-lg font-semibold text-center transition duration-300">Request Demo</a>
+                        <a href="#solutions" class="border-2 border-white hover:bg-white hover:text-blue-800 px-6 py-3 rounded-md text-lg font-semibold text-center transition duration-300">Our Solutions</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 relative">
+                    <div class="map-container rounded-xl overflow-hidden shadow-2xl">
+                        <div class="map-overlay flex items-center justify-center">
+                            <div class="text-center p-8">
+                                <div class="globe-spinner inline-block mb-6">
+                                    <i class="fas fa-globe-africa text-6xl text-white opacity-80"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold mb-2">Real-time Climate Monitoring</h3>
+                                <p class="opacity-80">Tracking forests, water sources, and land degradation across Kenya</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="bg-gray-100 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-center text-gray-500 text-sm font-semibold uppercase tracking-wide mb-8">Aligned with Kenya's Climate Action Partners</h2>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-8 items-center">
+                <div class="flex justify-center">
+                    <img src="https://via.placeholder.com/150x60?text=Kenya+AI+Strategy" alt="Kenya AI Strategy" class="h-12 opacity-70 hover:opacity-100 transition duration-300">
+                </div>
+                <div class="flex justify-center">
+                    <img src="https://via.placeholder.com/150x60?text=UK-Kenya+AI+Fund" alt="UK-Kenya AI Challenge Fund" class="h-12 opacity-70 hover:opacity-100 transition duration-300">
+                </div>
+                <div class="flex justify-center">
+                    <img src="https://via.placeholder.com/150x60?text=KFS" alt="Kenya Forest Service" class="h-12 opacity-70 hover:opacity-100 transition duration-300">
+                </div>
+                <div class="flex justify-center">
+                    <img src="https://via.placeholder.com/150x60?text=Ministry+of+Water" alt="Ministry of Water" class="h-12 opacity-70 hover:opacity-100 transition duration-300">
+                </div>
+                <div class="flex justify-center">
+                    <img src="https://via.placeholder.com/150x60?text=UNDP" alt="UNDP Kenya" class="h-12 opacity-70 hover:opacity-100 transition duration-300">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section id="solutions" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4">Our Climate Intelligence Solutions</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Fusing satellite imagery, machine learning, and socio-economic indicators to map and monitor Kenya's natural resources</p>
+            </div>
+            
+            <div class="dashboard-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 ease-in-out">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-tree text-blue-600 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-blue-900">Forest Monitoring</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">AI-powered analysis of satellite imagery to track deforestation and forest degradation with 90% accuracy.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs font-medium">Land Cover Prediction</span>
+                            <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs font-medium">Carbon Sequestration</span>
+                            <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs font-medium">Biodiversity</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="feature-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 ease-in-out">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-green-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-tint text-green-600 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-blue-900">Water Resource Intelligence</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">FLIPS flood-monitoring system and groundwater-resilience models for drought prediction.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-green-50 text-green-700 px-3 py-1 rounded-full text-xs font-medium">Flood Prediction</span>
+                            <span class="bg-green-50 text-green-700 px-3 py-1 rounded-full text-xs font-medium">Water Stress</span>
+                            <span class="bg-green-50 text-green-700 px-3 py-1 rounded-full text-xs font-medium">Aquifer Mapping</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="feature-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 ease-in-out">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-yellow-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-mountain text-yellow-600 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-blue-900">Land Degradation</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Early warning system for soil erosion and desertification using GEE-based data pipelines.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-yellow-50 text-yellow-700 px-3 py-1 rounded-full text-xs font-medium">Soil Health</span>
+                            <span class="bg-yellow-50 text-yellow-700 px-3 py-1 rounded-full text-xs font-medium">Erosion Risk</span>
+                            <span class="bg-yellow-50 text-yellow-700 px-3 py-1 rounded-full text-xs font-medium">Sustainable Farming</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="feature-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 ease-in-out">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-red-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-fire text-red-600 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-blue-900">Climate Risk Mapping</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Cadastral modeling and disaster-prediction dashboards for North-Eastern Kenya.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-red-50 text-red-700 px-3 py-1 rounded-full text-xs font-medium">Vulnerability</span>
+                            <span class="bg-red-50 text-red-700 px-3 py-1 rounded-full text-xs font-medium">Adaptation Planning</span>
+                            <span class="bg-red-50 text-red-700 px-3 py-1 rounded-full text-xs font-medium">Early Warning</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Feature 5 -->
+                <div class="feature-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 ease-in-out">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-purple-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-users text-purple-600 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-blue-900">Community Tools</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Participatory mapping with offline capabilities and advisories in local languages.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-purple-50 text-purple-700 px-3 py-1 rounded-full text-xs font-medium">Local Knowledge</span>
+                            <span class="bg-purple-50 text-purple-700 px-3 py-1 rounded-full text-xs font-medium">Mobile Apps</span>
+                            <span class="bg-purple-50 text-purple-700 px-3 py-1 rounded-full text-xs font-medium">Swahili Interface</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Feature 6 -->
+                <div class="feature-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 ease-in-out">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-indigo-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-chart-line text-indigo-600 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-blue-900">Policy Dashboards</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Customizable visualization tools aligned with Kenya AI Strategy 2025-2030.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-indigo-50 text-indigo-700 px-3 py-1 rounded-full text-xs font-medium">KPIs</span>
+                            <span class="bg-indigo-50 text-indigo-700 px-3 py-1 rounded-full text-xs font-medium">Scenario Modeling</span>
+                            <span class="bg-indigo-50 text-indigo-700 px-3 py-1 rounded-full text-xs font-medium">Reporting</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section id="technology" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:flex items-center">
+                <div class="lg:w-1/2 mb-12 lg:mb-0 lg:pr-12">
+                    <h2 class="text-3xl font-bold text-blue-900 mb-6">Our Technical Stack</h2>
+                    <p class="text-lg text-gray-600 mb-8">Combining cutting-edge geospatial technologies with responsible AI for climate resilience decision-making.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-100 text-blue-600">
+                                    <i class="fas fa-satellite-dish text-xl"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-blue-900">Earth Observation</h3>
+                                <p class="mt-1 text-gray-600">Sentinel, Landsat, and commercial imagery processed through Google Earth Engine and QGIS/ArcGIS pipelines</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-green-100 text-green-600">
+                                    <i class="fas fa-brain text-xl"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-blue-900">AI/ML Models</h3>
+                                <p class="mt-1 text-gray-600">TensorFlow/PyTorch CNNs, Random Forest classifiers, and custom algorithms for African landscapes</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-yellow-100 text-yellow-600">
+                                    <i class="fas fa-database text-xl"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-blue-900">Data Infrastructure</h3>
+                                <p class="mt-1 text-gray-600">PostgreSQL/PostGIS spatial databases with Django backend and React/Leaflet frontend</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="bg-white rounded-xl shadow-xl overflow-hidden">
+                        <div class="p-6 bg-blue-800 text-white">
+                            <h3 class="text-xl font-semibold mb-2">End-to-End Data Processing</h3>
+                            <p>From raw satellite data to community-ready insights in under 24 hours</p>
+                        </div>
+                        <div class="p-6">
+                            <div class="space-y-8">
+                                <!-- Pipeline Step 1 -->
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 bg-blue-100 rounded-full p-2">
+                                        <span class="h-6 w-6 rounded-full bg-blue-600 text-white flex items-center justify-center">1</span>
+                                    </div>
+                                    <div class="ml-4">
+                                        <h4 class="text-lg font-medium text-blue-900">Data Acquisition</h4>
+                                        <p class="mt-1 text-gray-600">Automated ingestion from satellite providers, UAVs, and IoT ground sensors</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Pipeline Step 2 -->
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 bg-blue-100 rounded-full p-2">
+                                        <span class="h-6 w-6 rounded-full bg-blue-600 text-white flex items-center justify-center">2</span>
+                                    </div>
+                                    <div class="ml-4">
+                                        <h4 class="text-lg font-medium text-blue-900">Pre-processing</h4>
+                                        <p class="mt-1 text-gray-600">Atmospheric correction, cloud masking, and radiometric calibration in GEE</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Pipeline Step 3 -->
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 bg-blue-100 rounded-full p-2">
+                                        <span class="h-6 w-6 rounded-full bg-blue-600 text-white flex items-center justify-center">3</span>
+                                    </div>
+                                    <div class="ml-4">
+                                        <h4 class="text-lg font-medium text-blue-900">AI Analysis</h4>
+                                        <p class="mt-1 text-gray-600">Custom CNNs detect changes and predict future scenarios with ground validation</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Pipeline Step 4 -->
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 bg-blue-100 rounded-full p-2">
+                                        <span class="h-6 w-6 rounded-full bg-blue-600 text-white flex items-center justify-center">4</span>
+                                    </div>
+                                    <div class="ml-4">
+                                        <h4 class="text-lg font-medium text-blue-900">Localization</h4>
+                                        <p class="mt-1 text-gray-600">Translate insights into Swahili and local dialects for community advisories</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Pipeline Step 5 -->
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 bg-blue-100 rounded-full p-2">
+                                        <span class="h-6 w-6 rounded-full bg-blue-600 text-white flex items-center justify-center">5</span>
+                                    </div>
+                                    <div class="ml-4">
+                                        <h4 class="text-lg font-medium text-blue-900">Delivery</h4>
+                                        <p class="mt-1 text-gray-600">Web/mobile dashboards, SMS alerts, and offline PDF reports for remote areas</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4">Our Expert Team</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Multidisciplinary geospatial and AI specialists with deep Kenya experience</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Team Member 1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition duration-300">
+                    <div class="h-48 team-photo-placeholder flex items-center justify-center text-white">
+                        <i class="fas fa-user-astronaut text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-blue-900 mb-1">Clement Ndome Mwakavi</h3>
+                        <p class="text-blue-600 mb-3">Geospatial & AI/ML Lead</p>
+                        <p class="text-gray-600 text-sm mb-4">Expert in Python, TensorFlow/PyTorch, QGIS/ArcGIS, GEE, and PostgreSQL/PostGIS. Developed land-cover prediction models and real-time aviation-terrain databases.</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i class="fas fa-envelope mr-2"></i>
+                            <a href="mailto:clementndome20@gmail.com" class="hover:text-blue-600">clementndome20@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition duration-300">
+                    <div class="h-48 team-photo-placeholder flex items-center justify-center text-white">
+                        <i class="fas fa-water text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-blue-900 mb-1">Francis Kigia Ngigi</h3>
+                        <p class="text-blue-600 mb-3">GIS & Spatial Intelligence</p>
+                        <p class="text-gray-600 text-sm mb-4">Built FLIPS flood-monitoring system and groundwater models. Skilled in ArcGIS/QGIS, GEE, ENVI, JavaScript, Python, and Power BI.</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i class="fas fa-envelope mr-2"></i>
+                            <a href="mailto:francisngigi433@gmail.com" class="hover:text-blue-600">francisngigi433@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition duration-300">
+                    <div class="h-48 team-photo-placeholder flex items-center justify-center text-white">
+                        <i class="fas fa-ruler-combined text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-blue-900 mb-1">Joseph Mulwa Musyimi</h3>
+                        <p class="text-blue-600 mb-3">Geospatial Engineer</p>
+                        <p class="text-gray-600 text-sm mb-4">Specializes in AI-driven GIS automation combining GNSS/RTK surveying with Python/SQL, AutoCAD/Civil 3D, and GeoServer.</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i class="fas fa-envelope mr-2"></i>
+                            <a href="mailto:musyimijoseph32@gmail.com" class="hover:text-blue-600">musyimijoseph32@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 4 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition duration-300">
+                    <div class="h-48 team-photo-placeholder flex items-center justify-center text-white">
+                        <i class="fas fa-satellite text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-blue-900 mb-1">Daniel Kamau</h3>
+                        <p class="text-blue-600 mb-3">Remote Sensing Analyst</p>
+                        <p class="text-gray-600 text-sm mb-4">Produced time-series deforestation analytics and water-stress mapping using GEE, ArcMap, and optimized Python pipelines.</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i class="fas fa-envelope mr-2"></i>
+                            <a href="mailto:kamaudaniel2001@gmail.com" class="hover:text-blue-600">kamaudaniel2001@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section id="impact" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4">Our Measurable Impact</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Supporting Kenya's climate adaptation goals through data-driven interventions</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <!-- Impact 1 -->
+                <div class="bg-blue-50 rounded-xl p-8 text-center">
+                    <div class="text-5xl font-bold text-blue-800 mb-4">85%</div>
+                    <h3 class="text-xl font-semibold text-blue-900 mb-2">Early Warning Accuracy</h3>
+                    <p class="text-gray-600">Our drought prediction models outperform traditional methods by 35%.</p>
+                </div>
+                
+                <!-- Impact 2 -->
+                <div class="bg-green-50 rounded-xl p-8 text-center">
+                    <div class="text-5xl font-bold text-green-800 mb-4">12K</div>
+                    <h3 class="text-xl font-semibold text-blue-900 mb-2">Farmers Reached</h3>
+                    <p class="text-gray-600">Receiving localized climate advisories in Swahili and local dialects.</p>
+                </div>
+                
+                <!-- Impact 3 -->
+                <div class="bg-yellow-50 rounded-xl p-8 text-center">
+                    <div class="text-5xl font-bold text-yellow-800 mb-4">47</div>
+                    <h3 class="text-xl font-semibold text-blue-900 mb-2">Protected Areas</h3>
+                    <p class="text-gray-600">Using our system for real-time monitoring against illegal activities.</p>
+                </div>
+            </div>
+            
+            <div class="bg-gray-50 rounded-xl shadow-sm overflow-hidden border border-gray-200">
+                <div class="md:flex">
+                    <div class="md:w-1/2 p-8 md:p-12">
+                        <h3 class="text-2xl font-bold text-blue-900 mb-4">Case Study: Scaling Across Counties</h3>
+                        <p class="text-gray-600 mb-6">Our pilot in North-Eastern Kenya demonstrated 40% reduction in climate-related losses. The system is now being adopted by 5 additional counties with support from the UK-Kenya AI Challenge Fund 2025.</p>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <div class="h-5 w-5 rounded-full bg-blue-600 flex items-center justify-center">
+                                        <i class="fas fa-check text-white text-xs"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-gray-700">Aligned with Kenya AI Strategy 2025-2030 priorities</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <div class="h-5 w-5 rounded-full bg-blue-600 flex items-center justify-center">
+                                        <i class="fas fa-check text-white text-xs"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-gray-700">Community-validated through participatory mapping</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <div class="h-5 w-5 rounded-full bg-blue-600 flex items-center justify-center">
+                                        <i class="fas fa-check text-white text-xs"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-gray-700">Designed for replication across all 47 counties</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 bg-blue-800">
+                        <div class="h-full flex items-center justify-center p-8">
+                            <div class="text-center text-white">
+                                <i class="fas fa-quote-left text-4xl opacity-30 mb-6"></i>
+                                <p class="text-xl mb-6">SpatioAI's platform has transformed how we prepare for climate shocks. The accuracy of their flood predictions saved our community.</p>
+                                <div class="font-semibold">— County Resilience Officer</div>
+                                <div class="text-blue-200">Garissa County</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-blue-800 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex items-center justify-between">
+                <div class="md:w-2/3 mb-8 md:mb-0">
+                    <h2 class="text-3xl font-bold mb-4">Ready to deploy our platform?</h2>
+                    <p class="text-lg opacity-90">Join government agencies and NGOs using our geospatial intelligence for climate resilience planning.</p>
+                </div>
+                <div class="md:w-1/3 text-center md:text-right">
+                    <a href="#contact" class="inline-block bg-white text-blue-800 hover:bg-blue-50 px-8 py-4 rounded-md text-lg font-semibold transition duration-300">Contact Our Team</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-12">
+                <div class="mb-12 lg:mb-0">
+                    <h2 class="text-3xl font-bold text-blue-900 mb-6">Get In Touch</h2>
+                    <p class="text-lg text-gray-600 mb-8">We're eager to discuss how our platform can support your climate adaptation and environmental monitoring needs.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <div class="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center">
+                                    <i class="fas fa-map-marker-alt text-blue-600"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-blue-900">Nairobi Office</h3>
+                                <p class="mt-1 text-gray-600">Senteu Plaza, 3rd Floor<br>Galana Road, Kilimani</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <div class="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center">
+                                    <i class="fas fa-envelope text-blue-600"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-blue-900">Email Our Team</h3>
+                                <p class="mt-1 text-gray-600">
+                                    <a href="mailto:clementndome20@gmail.com" class="text-blue-600 hover:underline">clementndome20@gmail.com</a><br>
+                                    <a href="mailto:francisngigi433@gmail.com" class="text-blue-600 hover:underline">francisngigi433@gmail.com</a>
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <div class="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center">
+                                    <i class="fas fa-phone-alt text-blue-600"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-blue-900">Call Us</h3>
+                                <p class="mt-1 text-gray-600">+254 700 123456<br>+254 720 987654</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="bg-gray-50 rounded-lg shadow-md overflow-hidden border border-gray-200">
+                        <div class="p-6 sm:p-8">
+                            <h3 class="text-xl font-semibold text-blue-900 mb-6">Send us a message</h3>
+                            <form>
+                                <div class="mb-4">
+                                    <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                                    <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                                    <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <label for="organization" class="block text-sm font-medium text-gray-700 mb-1">Organization</label>
+                                    <input type="text" id="organization" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Your Message</label>
+                                    <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"></textarea>
+                                </div>
+                                
+                                <div class="mt-6">
+                                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md text-lg font-medium transition duration-300">Send Message</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white pt-12 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex md:justify-between">
+                <div class="mb-8 md:mb-0">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-globe-africa text-2xl text-blue-300 mr-2"></i>
+                        <span class="text-xl font-bold text-white">SpatioAI Technologies</span>
+                    </div>
+                    <p class="text-blue-200 max-w-xs">Geospatial intelligence for climate resilience in Kenya and beyond.</p>
+                    <div class="flex space-x-4 mt-6">
+                        <a href="#" class="text-blue-300 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-blue-300 hover:text-white">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="text-blue-300 hover:text-white">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="text-blue-300 hover:text-white">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div>
+                        <h3 class="text-sm font-semibold text-blue-300 uppercase tracking-wider mb-4">Solutions</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-blue-200 hover:text-white">Forest Monitoring</a></li>
+                            <li><a href="#" class="text-blue-200 hover:text-white">Water Resources</a></li>
+                            <li><a href="#" class="text-blue-200 hover:text-white">Climate Risk</a></li>
+                            <li><a href="#" class="text-blue-200 hover:text-white">Community Tools</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-sm font-semibold text-blue-300 uppercase tracking-wider mb-4">Resources</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-blue-200 hover:text-white">Technical Docs</a></li>
+                            <li><a href="#" class="text-blue-200 hover:text-white">API Access</a></li>
+                            <li><a href="#" class="text-blue-200 hover:text-white">Case Studies</a></li>
+                            <li><a href="#" class="text-blue-200 hover:text-white">Research Papers</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-sm font-semibold text-blue-300 uppercase tracking-wider mb-4">Company</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#team" class="text-blue-200 hover:text-white">Our Team</a></li>
+                            <li><a href="#" class="text-blue-200 hover:text-white">Partners</a></li>
+                            <li><a href="#" class="text-blue-200 hover:text-white">Careers</a></li>
+                            <li><a href="#contact" class="text-blue-200 hover:text-white">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 pt-8 border-t border-blue-800 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-blue-300 text-sm">© 2023 SpatioAI Technologies. All rights reserved.</p>
+                <div class="mt-4 md:mt-0 flex space-x-6">
+                    <a href="#" class="text-blue-300 hover:text-white text-sm">Privacy Policy</a>
+                    <a href="#" class="text-blue-300 hover:text-white text-sm">Terms of Service</a>
+                    <a href="#" class="text-blue-300 hover:text-white text-sm">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        // Language selector dropdown
+        const languageSelector = document.querySelector('.language-selector');
+        if (languageSelector) {
+            languageSelector.addEventListener('mouseenter', function() {
+                const dropdown = this.querySelector('.language-dropdown');
+                dropdown.classList.remove('hidden');
+            });
+            
+            languageSelector.addEventListener('mouseleave', function() {
+                const dropdown = this.querySelector('.language-dropdown');
+                dropdown.classList.add('hidden');
+            });
+        }
+
+        // Form submission
+        const contactForm = document.querySelector('form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your message! Our team will respond within 24 hours.');
+                this.reset();
+            });
+        }
+    </script>
+</body>
+</html>
