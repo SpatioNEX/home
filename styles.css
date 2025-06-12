@@ -160,3 +160,50 @@
 .feature-card[data-feature="climate-risk"] .image-overlay {
     background: linear-gradient(to top, rgba(139, 0, 0, 0.7) 0%, transparent 70%);
 }
+
+/* more */
+/* Add these animations to your existing styles.css */
+@keyframes satelliteOrbit {
+    0% {
+        transform: rotate(0deg) translateX(60px) rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg) translateX(60px) rotate(-360deg);
+    }
+}
+
+@keyframes dataPulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.satellite-animation .satellite {
+    animation: satelliteOrbit 8s linear infinite;
+}
+
+.data-node {
+    animation: dataPulse 2s infinite;
+}
+
+.data-node:nth-child(1) {
+    animation-delay: 0s;
+}
+.data-node:nth-child(2) {
+    animation-delay: 0.3s;
+}
+.data-node:nth-child(3) {
+    animation-delay: 0.6s;
+}
+.data-node:nth-child(4) {
+    animation-delay: 0.9s;
+}
