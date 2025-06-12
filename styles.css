@@ -1,0 +1,96 @@
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #0f4c75 0%, #3282b8 50%, #bbe1fa 100%);
+        }
+        .map-container {
+            height: 500px;
+            background-image: url('https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-4.0.3');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .map-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(139, 14, 25, 0.6);
+        }
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(22, 67, 97, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .globe-spinner {
+            animation: spin 8s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .language-selector:hover .language-dropdown {
+            display: block;
+        }
+        .team-photo-placeholder {
+            background: linear-gradient(135deg,rgb(92, 21, 74) 0%, #3282b8 100%);
+        }
+        
+
+
+
+        /* Add to your existing style section */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.animate-fadeInUp {
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+.delay-100 {
+    animation-delay: 100ms;
+}
+
+.delay-200 {
+    animation-delay: 200ms;
+}
+
+/* Add this to your existing feature-card class */
+.feature-card {
+    transition: all 0.3s ease;
+    transform: translateY(0);
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 25px -5px rgba(22, 67, 97, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+    
