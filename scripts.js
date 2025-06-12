@@ -51,14 +51,14 @@ if (languageSelector) {
 }
 
 // Form submission
-const contactForm = document.querySelector('form');
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        alert('Thank you for your message! Our team will respond within 24 hours.');
-        this.reset();
-    });
-}
+// const contactForm = document.querySelector('form');
+// if (contactForm) {
+//     contactForm.addEventListener('submit', function(e) {
+//         e.preventDefault();
+//         alert('Thank you for your message! Our team will respond within 24 hours.');
+//         this.reset();
+//     });
+// }
 
 // Intersection Observer for scroll animations
 const animateOnScroll = () => {
@@ -107,3 +107,49 @@ document.addEventListener('DOMContentLoaded', () => {
         card.style.animationDelay = `${index * 100}ms`;
     });
 });
+
+// Update the form submission part of your scripts.js
+const contactForm = document.getElementById('contact-form');
+const formStatus = document.getElementById('form-status');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Change button text to indicate processing
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+        const originalButtonText = submitButton.textContent;
+        submitButton.innerHTML = `
+            <i class="fas fa-circle-notch fa-spin mr-2"></i> Sending...
+        `;
+        submitButton.disabled = true;
+        
+        // Submit the form data
+        fetch(contactForm.action, {
+            method: 'POST',
+            body: new FormData(contactForm),
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                // Redirect to thank you page
+                window.location.href = "https://spatioaitech.github.io/home/thank-you.html";
+            } else {
+                throw new Error('Form submission failed');
+            }
+        })
+        .catch(error => {
+            // Show error message
+            formStatus.textContent = 'Oops! There was a problem submitting your form. Please try again.';
+            formStatus.classList.remove('hidden', 'text-green-600');
+            formStatus.classList.add('text-red-600');
+            formStatus.classList.remove('hidden');
+            
+            // Reset button
+            submitButton.textContent = originalButtonText;
+            submitButton.disabled = false;
+        });
+    });
+}
