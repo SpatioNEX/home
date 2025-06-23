@@ -60,8 +60,8 @@
 
                 <div class="flex items-center">
                     <div class="hidden md:flex md:space-x-8">
-                        <a href="#about"
-                            class="text-blue-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">About</a>
+                        <!-- <a href="#about"
+                            class="text-blue-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">About</a> -->
                         <a href="#solutions"
                             class="text-blue-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Solutions</a>
                         <a href="#technology"
@@ -71,13 +71,12 @@
                             class="text-blue-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Impact</a>
                         <a href="#contact"
                             class="text-blue-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Contact</a>
+                        <a href="#contact"
+                            class="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-6 py-2 rounded-md text-sm font-medium transition duration-300">
+                            <i class="fas fa-calendar-check mr-2"></i> Book Consultation</a>
                     </div>
 
-                    <div class="hidden md:flex items-center ml-8 space-x-4">
-                        <a href="#"
-                            class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300">Demo
-                            Access</a>
-                    </div>
+
 
                     <div class="-mr-2 flex items-center md:hidden">
                         <button type="button" id="mobile-menu-button"
@@ -103,41 +102,87 @@
                     class="block px-3 py-2 text-base font-medium text-blue-900 hover:text-blue-600 hover:bg-blue-50">Impact</a>
                 <a href="#contact"
                     class="block px-3 py-2 text-base font-medium text-blue-900 hover:text-blue-600 hover:bg-blue-50">Contact</a>
-                <!-- <div class="px-3 py-2">
-                    <a href="#" class="block w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium text-center transition duration-300">Demo Access</a>
-                </div> -->
+                <a href="#contact" 
+                    class="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-6 py-2 rounded-md text-sm font-medium transition duration-300">
+                    <i class="fas fa-calendar-check mr-2"></i> Book Consultation
+                 </a>
 
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero + About Combined Section -->
     <section id="hero" class="hero-gradient text-white">
-        <!-- <section id="hero" class="hero-gradient text-white"> -->
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
-            <div class="md:flex items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-32">
+            <div class="md:flex items-center gap-12">
                 <div class="md:w-1/2 mb-10 md:mb-0">
-                    <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">Leading the future of geospatial
-                        intelligence across Africa</p> <br>
-                        <p class="text-lg text-white-800 mb-6">
-                        SpatioAI Technologies is a geospatial intelligence company specializing in
-                        AI-powered solutions for spanning smart agriculture, climate resilience and environmental
-                        monitoring across Africa. Founded in 2025, we combine
-                        cutting-edge satellite technology [earth observation] with machine learning to provide
-                        actionable insights and decision support for private companies,
-                        governments, NGOs, and local communities.
-                    </p>
-                        <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                            <a href="#contact"
-                                class="bg-white text-blue-800 hover:bg-blue-50 px-6 py-3 rounded-md text-lg font-semibold text-center transition duration-300">Request
-                                Demo</a>
-                            <a href="#solutions"
-                                class="border-2 border-white hover:bg-white hover:text-blue-800 px-6 py-3 rounded-md text-lg font-semibold text-center transition duration-300">Our
-                                Solutions</a>
+                    <div class="mb-8">
+                        <div class="flex items-center mb-6">
+                            <!-- <img src="my-favicon/favicon.svg" alt="SpatioAI Logo" class="h-10 w-10 mr-3"> -->
+                            <!-- <span class="text-2xl font-bold text-white">SPATIOAI TECHNOLOGIES</span> -->
                         </div>
+                        <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
+                            <span class="block text-blue-200 mb-2">AI-Powered</span>
+                            Geospatial Intelligence for Africa's Climate Resilience
+                        </h1>
+                        <p class="text-xl text-blue-100 mb-8">
+                            We transform satellite data into actionable insights to protect ecosystems,
+                            predict climate risks, and empower sustainable development across Africa.
+                        </p>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mb-12">
+                        <a href="#contact"
+                            class="bg-white text-blue-800 hover:bg-blue-50 px-6 py-3 rounded-md text-lg font-semibold text-center transition duration-300 flex items-center justify-center">
+                            <i class="fas fa-calendar-check mr-2"></i> Request Demo
+                        </a>
+                        <a href="#solutions"
+                            class="border-2 border-white hover:bg-white hover:text-blue-800 px-6 py-3 rounded-md text-lg font-semibold text-center transition duration-300 flex items-center justify-center">
+                            <i class="fas fa-chart-line mr-2"></i> Our Solutions
+                        </a>
+                    </div>
+
+                    <div
+                        class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-6 border border-white border-opacity-20">
+                        <h3 class="text-xl font-semibold mb-4 text-blue-100">Why Choose SpatioAI?</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <div class="h-5 w-5 rounded-full bg-blue-400 flex items-center justify-center">
+                                        <i class="fas fa-check text-white text-xs"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-blue-50">African-developed solutions tailored to local challenges</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <div class="h-5 w-5 rounded-full bg-blue-400 flex items-center justify-center">
+                                        <i class="fas fa-check text-white text-xs"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-blue-50">90% accuracy in environmental monitoring</p>
+                                </div>
+                            </div>
+                            <!-- <div class="flex items-start">
+                                    <div class="flex-shrink-0 mt-1">
+                                        <div class="h-5 w-5 rounded-full bg-blue-400 flex items-center justify-center">
+                                            <i class="fas fa-check text-white text-xs"></i>
+                                        </div>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="text-blue-50">Recognized by Kenya AI Strategy 2025-2030</p>
+                                    </div>
+                                </div> -->
+                        </div>
+                    </div>
                 </div>
+
                 <div class="md:w-1/2 relative">
-                    <div class="map-container rounded-xl overflow-hidden shadow-2xl relative">
+                    <div
+                        class="map-container rounded-xl overflow-hidden shadow-2xl relative border-4 border-white border-opacity-20">
                         <div id="map" class="h-full w-full"></div>
                         <div
                             class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4 text-white">
@@ -149,115 +194,76 @@
                             <i class="fas fa-expand text-blue-800"></i>
                         </div>
                     </div>
+
+                    <div class="mt-8 bg-white rounded-xl shadow-lg p-6 text-blue-900">
+                        <h3 class="text-xl font-bold mb-4 flex items-center">
+                            <i class="fas fa-lightbulb text-yellow-500 mr-3"></i>
+                            <span>Our Innovation</span>
+                        </h3>
+                        <p class="mb-4">
+                            SpatioAI combines cutting-edge satellite technology with machine learning to deliver:
+                        </p>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-circle text-blue-600 text-xs mt-2 mr-3"></i>
+                                <span>Daily environmental monitoring across Africa</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-circle text-blue-600 text-xs mt-2 mr-3"></i>
+                                <span>Predictive analytics for climate risks</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-circle text-blue-600 text-xs mt-2 mr-3"></i>
+                                <span>Localized solutions for communities and governments</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="lg:flex items-center gap-12">
-                <div class="lg:w-1/2 mb-12 lg:mb-0">
-                    <div class="relative rounded-xl overflow-hidden shadow-2xl h-96">
-                        <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
-                            alt="SpatioAI Team" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-gradient-to-r from-blue-800 to-transparent opacity-30"></div>
-                    </div>
-                </div>
-                <div class="lg:w-1/2">
-                    <h2 class="text-3xl font-bold text-blue-900 mb-6">Pioneering Geospatial Intelligence in Africa</h2>
-                    <p class="text-lg text-gray-600 mb-6">
-                        SpatioAI Technologies is a geospatial intelligence company specializing in
-                        AI-powered solutions for spanning smart agriculture, climate resilience and environmental
-                        monitoring across Africa. Founded in 2025, we combine
-                        cutting-edge satellite technology [earth observation] with machine learning to provide
-                        actionable insights and decision support for private companies,
-                        governments, NGOs, and local communities.
-                    </p>
-                    <div class="space-y-4 mb-8">
-                        <div class="flex">
-                            <div class="flex-shrink-0 mt-1">
-                                <div class="h-5 w-5 rounded-full bg-blue-600 flex items-center justify-center">
-                                    <i class="fas fa-check text-white text-xs"></i>
-                                </div>
-                            </div>
-                            <div class="ml-3">
-                                <p class="text-gray-700">African based company to integrate AI with real-time satellite
-                                    monitoring for across our solutions</p>
-                            </div>
-                        </div>
-                        <div class="flex">
-                            <div class="flex-shrink-0 mt-1">
-                                <div class="h-5 w-5 rounded-full bg-blue-600 flex items-center justify-center">
-                                    <i class="fas fa-check text-white text-xs"></i>
-                                </div>
-                            </div>
-                            <div class="ml-3">
-                                <p class="text-gray-700">Recognized by the Kenya AI Strategy 2025-2030 as a key
-                                    innovation partner</p>
-                            </div>
-                        </div>
-                        <div class="flex">
-                            <div class="flex-shrink-0 mt-1">
-                                <div class="h-5 w-5 rounded-full bg-blue-600 flex items-center justify-center">
-                                    <i class="fas fa-check text-white text-xs"></i>
-                                </div>
-                            </div>
-                            <div class="ml-3">
-                                <p class="text-gray-700">Serving local communities and governments with our solutions
-                                </p>
-                            </div>
-                        </div>
-                        <div class="flex flex-col sm:flex-row gap-4">
-                            <a href="#mission"
-                                class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md text-center font-medium transition duration-300">
-                                Our Mission
-                            </a>
-                            <a href="#team"
-                                class="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-md text-center font-medium transition duration-300">
-                                Meet Our Team
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    </section>
 
-    <!-- Mission Section -->
-    <section id="mission" class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-blue-900 mb-4">Our Vision & Mission</h2>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Driving climate resilience through geospatial
-                    innovation</p>
+
+    <!-- Compact Mission Section -->
+    <section id="mission" class="py-12 bg-gray-50">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl font-bold text-blue-900 mb-2">Our Core Purpose</h2>
+                <p class="text-gray-600">Geospatial intelligence for African climate resilience</p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto">
-                        <i class="fas fa-bullseye text-blue-600 text-2xl"></i>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <!-- Vision -->
+                <div class="bg-white p-4 rounded-lg shadow-xs border border-gray-100 flex items-start">
+                    <div class="bg-blue-100 p-2 rounded-full mr-3 flex-shrink-0">
+                        <i class="fas fa-bullseye text-blue-600 text-lg"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-center text-blue-900 mb-3">Vision</h3>
-                    <p class="text-gray-600 text-center">To become Africa's leading geospatial intelligence platform,
-                        transforming climate data into actionable insights for sustainable development.</p>
+                    <div>
+                        <h3 class="font-semibold text-blue-900 mb-1">Vision</h3>
+                        <p class="text-gray-600 text-sm">Africa's geospatial intelligence leader</p>
+                    </div>
                 </div>
 
-                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300">
-                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6 mx-auto">
-                        <i class="fas fa-hand-holding-heart text-green-600 text-2xl"></i>
+                <!-- Mission -->
+                <div class="bg-white p-4 rounded-lg shadow-xs border border-gray-100 flex items-start">
+                    <div class="bg-green-100 p-2 rounded-full mr-3 flex-shrink-0">
+                        <i class="fas fa-hand-holding-heart text-green-600 text-lg"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-center text-blue-900 mb-3">Mission</h3>
-                    <p class="text-gray-600 text-center">To empower communities and governments with AI-powered
-                        geospatial tools that enhance climate resilience and protect vital ecosystems.</p>
+                    <div>
+                        <h3 class="font-semibold text-blue-900 mb-1">Mission</h3>
+                        <p class="text-gray-600 text-sm">Empower through geospatial AI</p>
+                    </div>
                 </div>
 
-                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300">
-                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6 mx-auto">
-                        <i class="fas fa-heartbeat text-purple-600 text-2xl"></i>
+                <!-- Values -->
+                <div class="bg-white p-4 rounded-lg shadow-xs border border-gray-100 flex items-start">
+                    <div class="bg-purple-100 p-2 rounded-full mr-3 flex-shrink-0">
+                        <i class="fas fa-heartbeat text-purple-600 text-lg"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-center text-blue-900 mb-3">Values</h3>
-                    <p class="text-gray-600 text-center">Innovation, Sustainability, Community Impact, Data Integrity,
-                        and African-led Solutions.</p>
+                    <div>
+                        <h3 class="font-semibold text-blue-900 mb-1">Values</h3>
+                        <p class="text-gray-600 text-sm">Innovation · Integrity · Impact</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -293,12 +299,20 @@
     </section> -->
 
     <!-- Solutions Section -->
-    <section id="solutions" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-blue-900 mb-4">Our Climate Intelligence Solutions</h2>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Fusing satellite imagery, machine learning, and
-                    socio-economic indicators to map and monitor Kenya's natural resources</p>
+    <!-- Gradient Header Section -->
+    <section id="solutions" class="relative overflow-hidden">
+        <!-- Gradient Background -->
+        <div class="absolute inset-0 bg-gradient-to-b from-blue-50/30 to-white z-0"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 relative z-10">
+            <!-- Text Content with Subtle Background -->
+            <div
+                class="bg-gradient-to-r from-blue-100 to-blue-50 rounded-xl p-6 md:p-8 mb-10 border border-blue-200 shadow-sm">
+                <h2 class="text-2xl md:text-3xl font-bold text-blue-800 mb-3">Our Climate Intelligence Solutions</h2>
+                <p class="text-blue-600 max-w-3xl">
+                    Fusing satellite imagery, machine learning, and socio-economic indicators to map and monitor Kenya's
+                    natural resources
+                </p>
             </div>
 
             <div class="dashboard-grid">
@@ -335,8 +349,7 @@
                 <div
                     class="feature-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 ease-in-out relative group">
                     <div class="h-48 bg-gray-800 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
-                            alt="Water Resource Intelligence"
+                        <img src="images/water_resource.webp" alt="Water Resource Intelligence"
                             class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                         <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
                     </div>
@@ -365,8 +378,7 @@
                 <div
                     class="feature-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 ease-in-out relative group">
                     <div class="h-48 bg-gray-800 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
-                            alt="Land Degradation"
+                        <img src="images/land_degradation.webp" alt="Land Degradation"
                             class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                         <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
                     </div>
@@ -427,8 +439,7 @@
                 <div
                     class="feature-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 ease-in-out relative group">
                     <div class="h-48 bg-gray-800 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
-                            alt="Smart Agriculture"
+                        <img src="images/smart_agriculture.webp" alt="Smart Agriculture"
                             class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                         <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
                     </div>
@@ -728,88 +739,94 @@
     </section>
 
     <!-- Impact Section -->
-<section id="impact" class="py-20 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl font-bold text-blue-900 mb-4">Our Growing Impact</h2>
-            <p class="text-lg text-gray-600 max-w-3xl mx-auto">Early successes demonstrating our potential to support Kenya's climate adaptation goals</p>
-        </div>
-
-        <div class="grid md:grid-cols-3 gap-8 mb-16">
-            <!-- Impact 1 -->
-            <div class="bg-blue-50 rounded-xl p-8 text-center">
-                <div class="text-5xl font-bold text-blue-800 mb-4">75%</div>
-                <h3 class="text-xl font-semibold text-blue-900 mb-2">Model Accuracy</h3>
-                <p class="text-gray-600">Our initial drought prediction models show promising results in pilot tests.</p>
+    <section id="impact" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4">Our Growing Impact</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Early successes demonstrating our potential to
+                    support Kenya's climate adaptation goals</p>
             </div>
 
-            <!-- Impact 2 -->
-            <div class="bg-green-50 rounded-xl p-8 text-center">
-                <div class="text-5xl font-bold text-green-800 mb-4">5</div>
-                <h3 class="text-xl font-semibold text-blue-900 mb-2">Communities Served</h3>
-                <p class="text-gray-600">Providing localized climate advisories in our initial pilot program.</p>
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <!-- Impact 1 -->
+                <div class="bg-blue-50 rounded-xl p-8 text-center">
+                    <div class="text-5xl font-bold text-blue-800 mb-4">75%</div>
+                    <h3 class="text-xl font-semibold text-blue-900 mb-2">Model Accuracy</h3>
+                    <p class="text-gray-600">Our initial drought prediction models show promising results in pilot
+                        tests.</p>
+                </div>
+
+                <!-- Impact 2 -->
+                <div class="bg-green-50 rounded-xl p-8 text-center">
+                    <div class="text-5xl font-bold text-green-800 mb-4">5</div>
+                    <h3 class="text-xl font-semibold text-blue-900 mb-2">Communities Served</h3>
+                    <p class="text-gray-600">Providing localized climate advisories in our initial pilot program.</p>
+                </div>
+
+                <!-- Impact 3 -->
+                <div class="bg-yellow-50 rounded-xl p-8 text-center">
+                    <div class="text-5xl font-bold text-yellow-800 mb-4">3</div>
+                    <h3 class="text-xl font-semibold text-blue-900 mb-2">Protected Areas</h3>
+                    <p class="text-gray-600">Testing our monitoring system with conservation partners.</p>
+                </div>
             </div>
 
-            <!-- Impact 3 -->
-            <div class="bg-yellow-50 rounded-xl p-8 text-center">
-                <div class="text-5xl font-bold text-yellow-800 mb-4">3</div>
-                <h3 class="text-xl font-semibold text-blue-900 mb-2">Protected Areas</h3>
-                <p class="text-gray-600">Testing our monitoring system with conservation partners.</p>
-            </div>
-        </div>
-
-        <div class="bg-gray-50 rounded-xl shadow-sm overflow-hidden border border-gray-200">
-            <div class="md:flex">
-                <div class="md:w-1/2 p-8 md:p-12">
-                    <h3 class="text-2xl font-bold text-blue-900 mb-4">Pilot Program: Building Our Foundation</h3>
-                    <p class="text-gray-600 mb-6">Our initial work in Machakos County has demonstrated the potential for 25% improvement in climate preparedness. We're now expanding to 2 additional counties as we refine our technology.</p>
-                    <div class="space-y-4">
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 mt-1">
-                                <div class="h-5 w-5 rounded-full bg-blue-600 flex items-center justify-center">
-                                    <i class="fas fa-check text-white text-xs"></i>
+            <div class="bg-gray-50 rounded-xl shadow-sm overflow-hidden border border-gray-200">
+                <div class="md:flex">
+                    <div class="md:w-1/2 p-8 md:p-12">
+                        <h3 class="text-2xl font-bold text-blue-900 mb-4">Pilot Program: Building Our Foundation</h3>
+                        <p class="text-gray-600 mb-6">Our initial work in Machakos County has demonstrated the potential
+                            for 25% improvement in climate preparedness. We're now expanding to 2 additional counties as
+                            we refine our technology.</p>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <div class="h-5 w-5 rounded-full bg-blue-600 flex items-center justify-center">
+                                        <i class="fas fa-check text-white text-xs"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-gray-700">Aligned with Kenya's Vision 2030 development goals</p>
                                 </div>
                             </div>
-                            <div class="ml-3">
-                                <p class="text-gray-700">Aligned with Kenya's Vision 2030 development goals</p>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <div class="h-5 w-5 rounded-full bg-blue-600 flex items-center justify-center">
+                                        <i class="fas fa-check text-white text-xs"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-gray-700">Community feedback shaping our product development</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <div class="h-5 w-5 rounded-full bg-blue-600 flex items-center justify-center">
+                                        <i class="fas fa-check text-white text-xs"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-gray-700">Designed for scalable implementation across counties</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 mt-1">
-                                <div class="h-5 w-5 rounded-full bg-blue-600 flex items-center justify-center">
-                                    <i class="fas fa-check text-white text-xs"></i>
-                                </div>
-                            </div>
-                            <div class="ml-3">
-                                <p class="text-gray-700">Community feedback shaping our product development</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 mt-1">
-                                <div class="h-5 w-5 rounded-full bg-blue-600 flex items-center justify-center">
-                                    <i class="fas fa-check text-white text-xs"></i>
-                                </div>
-                            </div>
-                            <div class="ml-3">
-                                <p class="text-gray-700">Designed for scalable implementation across counties</p>
+                    </div>
+                    <div class="md:w-1/2 bg-blue-800">
+                        <div class="h-full flex items-center justify-center p-8">
+                            <div class="text-center text-white">
+                                <i class="fas fa-quote-left text-4xl opacity-30 mb-6"></i>
+                                <p class="text-xl mb-6">SpatioAI's approach shows great promise. Their team understands
+                                    the local context and is building solutions that actually work for our communities.
+                                </p>
+                                <div class="font-semibold">— Local Agriculture Officer</div>
+                                <div class="text-blue-200">Machakos Pilot Program</div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="md:w-1/2 bg-blue-800">
-                    <div class="h-full flex items-center justify-center p-8">
-                        <div class="text-center text-white">
-                            <i class="fas fa-quote-left text-4xl opacity-30 mb-6"></i>
-                            <p class="text-xl mb-6">SpatioAI's approach shows great promise. Their team understands the local context and is building solutions that actually work for our communities.</p>
-                            <div class="font-semibold">— Local Agriculture Officer</div>
-                            <div class="text-blue-200">Machakos Pilot Program</div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
     <!-- CTA Section -->
     <section class="py-20 bg-blue-800 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
