@@ -90,7 +90,10 @@
 /* Team Styles */
 .team-photo-placeholder {
     background: linear-gradient(135deg,rgb(92, 21, 74) 0%, #3282b8 100%);
+    
 }
+
+
 
 /* Animation Effects */
 @keyframes fadeInUp {
@@ -376,3 +379,33 @@
     position: relative;
     margin-top: -20px;
   }
+
+  /* Team Profile Images */
+#leadership .md\:w-1\/3 {
+    height: 300px; /* Fixed height for leadership images */
+    min-height: 300px;
+}
+
+#technical-team .relative {
+    height: 200px; /* Fixed height for technical team images */
+}
+
+/* Ensure images cover properly */
+#leadership img,
+#technical-team img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Leadership profile layout */
+#leadership .md\\:flex {
+    align-items: stretch;
+}
+
+/* Technical team card heights */
+#technical-team .bg-white {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
