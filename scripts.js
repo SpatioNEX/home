@@ -285,3 +285,55 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// In scripts.js, update the smooth scrolling to handle team page links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        // Check if the link is from index.html to team.html
+        if (this.getAttribute('href').startsWith('team.html#')) {
+            // Let the link work normally
+            return;
+        }
+        
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            targetElement.scrollIntoView({
+                behavior: 'smooth'
+            });
+            
+            // Close mobile menu if open
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+            }
+        }
+    });
+});
+
+ type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "SpatioAI Technologies",
+  "description": "Geospatial AI solutions for climate resilience",
+  "url": "https://spatioaitech.github.io/home"
+}
+
+
+// Register service worker
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js')
+        .then(registration => {
+          console.log('SW registered: ', registration.scope);
+        })
+        .catch(registrationError => {
+          console.log('SW registration failed: ', registrationError);
+        });
+    });
+  }
