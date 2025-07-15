@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -67,47 +66,49 @@
 
 <body class="font-sans bg-gray-50">
     <!-- Navigation -->
-    <nav class="bg-white shadow-lg sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex items-center">
-                    <div class="flex-shrink-0 flex items-center">
-                        <a href="#hero" class="flex items-center">
-                            <img src="my-favicon/favicon.svg" alt="SpatioAI Logo" class="h-8 w-8 mr-2">
-                            <span class="text-xl font-bold text-blue-800">SpatioAI Tech</span>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="flex items-center">
-                    <div class="hidden md:flex md:space-x-8">
-                        <a href="#solutions" class="text-blue-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Solutions</a>
-                        <a href="#technology" class="text-blue-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Technology</a>
-                        <a href="#team" class="text-blue-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Team</a>
-                        <a href="#impact" class="text-blue-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Impact</a>
-                        <a href="#contact" class="text-blue-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Contact</a>
-                    </div>
-
-                    <div class="-mr-2 flex items-center md:hidden">
-                        <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-blue-900 hover:text-blue-600 hover:bg-blue-50 focus:outline-none">
-                            <i class="fas fa-bars"></i>
-                        </button>
-                    </div>
+    <!-- Navigation -->
+<nav class="bg-white shadow-lg sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+            <!-- Logo & Brand Name -->
+            <div class="flex items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#hero" class="flex items-center">
+                        <img src="my-favicon/favicon.svg" alt="SpatioAI Logo" class="h-8 w-8 mr-2">
+                        <span class="text-xl font-bold text-blue-800">SpatioAI Tech</span>
+                    </a>
                 </div>
             </div>
 
-            <!-- Mobile menu -->
-            <div class="hidden md:hidden" id="mobile-menu">
-                <div class="pt-2 pb-3 space-y-1">
-                    <a href="#solutions" class="block px-3 py-2 text-base font-medium text-blue-900 hover:text-blue-600 hover:bg-blue-50">Solutions</a>
-                    <a href="#technology" class="block px-3 py-2 text-base font-medium text-blue-900 hover:text-blue-600 hover:bg-blue-50">Technology</a>
-                    <a href="#team" class="block px-3 py-2 text-base font-medium text-blue-900 hover:text-blue-600 hover:bg-blue-50">Team</a>
-                    <a href="#impact" class="block px-3 py-2 text-base font-medium text-blue-900 hover:text-blue-600 hover:bg-blue-50">Impact</a>
-                    <a href="#contact" class="block px-3 py-2 text-base font-medium text-blue-900 hover:text-blue-600 hover:bg-blue-50">Contact</a>
-                </div>
+            <!-- Desktop Navigation (Hidden on Mobile) -->
+            <div class="hidden md:flex md:items-center md:space-x-8">
+                <a href="#solutions" class="text-blue-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Solutions</a>
+                <a href="#technology" class="text-blue-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Technology</a>
+                <a href="#team" class="text-blue-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Team</a>
+                <a href="#impact" class="text-blue-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Impact</a>
+                <a href="#contact" class="text-blue-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Contact</a>
+            </div>
+
+            <!-- Mobile Menu Button (Visible on Mobile) -->
+            <div class="flex items-center md:hidden">
+                <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-blue-900 hover:text-blue-600 hover:bg-blue-50 focus:outline-none">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
         </div>
-    </nav>
+    </div>
+
+    <!-- Mobile Menu (Hidden by Default) -->
+    <div class="hidden md:hidden" id="mobile-menu">
+        <div class="pt-2 pb-3 space-y-1">
+            <a href="#solutions" class="block px-3 py-2 text-base font-medium text-blue-900 hover:text-blue-600 hover:bg-blue-50">Solutions</a>
+            <a href="#technology" class="block px-3 py-2 text-base font-medium text-blue-900 hover:text-blue-600 hover:bg-blue-50">Technology</a>
+            <a href="#team" class="block px-3 py-2 text-base font-medium text-blue-900 hover:text-blue-600 hover:bg-blue-50">Team</a>
+            <a href="#impact" class="block px-3 py-2 text-base font-medium text-blue-900 hover:text-blue-600 hover:bg-blue-50">Impact</a>
+            <a href="#contact" class="block px-3 py-2 text-base font-medium text-blue-900 hover:text-blue-600 hover:bg-blue-50">Contact</a>
+        </div>
+    </div>
+</nav>
 
     <!-- Hero Section -->
     <section id="hero" class="hero-gradient text-white">
@@ -583,8 +584,7 @@
                 <a href="team.html#technical-team" class="group text-center">
                     <div class="relative mb-4 rounded-full overflow-hidden aspect-square w-32 h-32 mx-auto shadow-lg group-hover:shadow-xl transition duration-300">
                         <img src="images/team/joseph.webp" alt="Joseph Musyimi" class="w-full h-full object-cover">
-                        <div
-                            class="absolute inset-0 bg-blue-800 opacity-0 group-hover:opacity-30 transition duration-300">
+                        <div class="absolute inset-0 bg-blue-800 opacity-0 group-hover:opacity-30 transition duration-300">
                         </div>
                     </div>
                     <h3 class="text-lg font-semibold text-blue-900 group-hover:text-blue-600 transition duration-300">
@@ -594,12 +594,10 @@
 
                 <!-- Team Member 4 -->
                 <a href="team.html#technical-team" class="group text-center">
-                    <div
-                        class="relative mb-4 rounded-full overflow-hidden aspect-square w-32 h-32 mx-auto shadow-lg group-hover:shadow-xl transition duration-300">
+                    <div class="relative mb-4 rounded-full overflow-hidden aspect-square w-32 h-32 mx-auto shadow-lg group-hover:shadow-xl transition duration-300">
                         <img src="images/team/elizabeth.webp" alt="Elizabeth Muthoni"
                             class="w-full h-full object-cover">
-                        <div
-                            class="absolute inset-0 bg-blue-800 opacity-0 group-hover:opacity-30 transition duration-300">
+                        <div class="absolute inset-0 bg-blue-800 opacity-0 group-hover:opacity-30 transition duration-300">
                         </div>
                     </div>
                     <h3 class="text-lg font-semibold text-blue-900 group-hover:text-blue-600 transition duration-300">
@@ -609,11 +607,9 @@
 
                 <!-- Team Member 5 -->
                 <a href="team.html#technical-team" class="group text-center">
-                    <div
-                        class="relative mb-4 rounded-full overflow-hidden aspect-square w-32 h-32 mx-auto shadow-lg group-hover:shadow-xl transition duration-300">
+                    <div class="relative mb-4 rounded-full overflow-hidden aspect-square w-32 h-32 mx-auto shadow-lg group-hover:shadow-xl transition duration-300">
                         <img src="images/team/daniel.webp" alt="Daniel Kamau" class="w-full h-full object-cover">
-                        <div
-                            class="absolute inset-0 bg-blue-800 opacity-0 group-hover:opacity-30 transition duration-300">
+                        <div class="absolute inset-0 bg-blue-800 opacity-0 group-hover:opacity-30 transition duration-300">
                         </div>
                     </div>
                     <h3 class="text-lg font-semibold text-blue-900 group-hover:text-blue-600 transition duration-300">
@@ -626,78 +622,6 @@
                 <a href="team.html" class="inline-block text-blue-600 hover:text-blue-800 font-medium">
                     Explore full team profiles <i class="fas fa-arrow-right ml-2"></i>
                 </a>
-
-
-                <!-- Team Member 6 - "Meet More" Card -->
-                <!-- <a href="team.html" class="group text-center">
-                <div class="relative mb-4 rounded-full overflow-hidden aspect-square w-32 h-32 mx-auto shadow-lg group-hover:shadow-xl transition duration-300 bg-gray-100 flex items-center justify-center">
-                    <div class="text-blue-800 group-hover:text-blue-600 text-4xl transition duration-300">
-                        <i class="fas fa-plus"></i>
-                    </div>
-                </div>
-                <h3 class="text-lg font-semibold text-blue-900 group-hover:text-blue-600 transition duration-300">Full Team</h3>
-                <p class="text-sm text-blue-600">+ Advisors & Partners</p>
-            </a> -->
-            </div>
-        </div>
-    </section>
-
-    <!-- new section for project case studie -->
-    <section id="case-studies" class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-blue-900 mb-4">Project Case Studies</h2>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Explore our impactful geospatial solutions (coming
-                    soon)</p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Coming Soon Card 1 -->
-                <div
-                    class="bg-white rounded-xl overflow-hidden border-2 border-dashed border-gray-300 hover:border-blue-400 transition duration-300 min-h-[300px] flex flex-col items-center justify-center p-8 text-center">
-                    <div class="bg-blue-100 p-4 rounded-full mb-4">
-                        <i class="fas fa-satellite-dish text-green-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-blue-900 mb-2">Forest Monitoring</h3>
-                    <p class="text-gray-500 mb-4">Detailed case study coming soon</p>
-                    <div class="px-3 py-1 bg-green-50 text-green-700 rounded-full text-sm font-medium">
-                        Coming Soon
-                    </div>
-                </div>
-
-                <!-- Coming Soon Card 2 -->
-                <div
-                    class="bg-white rounded-xl overflow-hidden border-2 border-dashed border-gray-300 hover:border-blue-400 transition duration-300 min-h-[300px] flex flex-col items-center justify-center p-8 text-center">
-                    <div class="bg-blue-100 p-4 rounded-full mb-4">
-                        <i class="fas fa-tint text-blue-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-blue-900 mb-2">Water Resources</h3>
-                    <p class="text-gray-500 mb-4">Detailed case study coming soon</p>
-                    <div class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm font-medium">
-                        Coming Soon
-                    </div>
-                </div>
-
-                <!-- Coming Soon Card 3 -->
-                <div
-                    class="bg-white rounded-xl overflow-hidden border-2 border-dashed border-gray-300 hover:border-blue-400 transition duration-300 min-h-[300px] flex flex-col items-center justify-center p-8 text-center">
-                    <div class="bg-purple-100 p-4 rounded-full mb-4">
-                        <i class="fas fa-fire text-purple-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-blue-900 mb-2">Climate Risk</h3>
-                    <p class="text-gray-500 mb-4">Detailed case study coming soon</p>
-                    <div class="px-3 py-1 bg-purple-50 text-purple-700 rounded-full text-sm font-medium">
-                        Coming Soon
-                    </div>
-                </div>
-            </div>
-
-            <div class="text-center mt-12">
-                <button
-                    class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-medium inline-flex items-center opacity-50 cursor-not-allowed"
-                    disabled>
-                    <i class="fas fa-envelope mr-2"></i> Notify Me When Available
-                </button>
             </div>
         </div>
     </section>
@@ -791,6 +715,7 @@
             </div>
         </div>
     </section>
+    
     <!-- CTA Section -->
     <section class="py-20 bg-blue-800 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -870,36 +795,30 @@
                         <div class="p-6 sm:p-8">
                             <h3 class="text-xl font-semibold text-blue-900 mb-6">Send us a message</h3>
                             <form id="contact-form" action="https://formspree.io/f/xjkrwplr" method="POST">
-
-                                <!-- Add these hidden fields -->
                                 <input type="hidden" name="_subject" value="New contact from SpatioAI website">
-                                <input type="hidden" name="_next"
-                                    value="https://spatioaitech.github.io/home/thank-you.html">
+                                <input type="hidden" name="_next" value="https://spatioaitech.github.io/home/thank-you.html">
                                 <input type="text" name="_gotcha" style="display:none">
+                                
                                 <div class="mb-4">
-                                    <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full
-                                        Name</label>
+                                    <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
                                     <input type="text" id="name" name="name" required
                                         class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
                                 </div>
 
                                 <div class="mb-4">
-                                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email
-                                        Address</label>
+                                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
                                     <input type="email" id="email" name="email" required
                                         class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
                                 </div>
 
                                 <div class="mb-4">
-                                    <label for="organization"
-                                        class="block text-sm font-medium text-gray-700 mb-1">Organization</label>
+                                    <label for="organization" class="block text-sm font-medium text-gray-700 mb-1">Organization</label>
                                     <input type="text" id="organization" name="organization"
                                         class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
                                 </div>
 
                                 <div class="mb-4">
-                                    <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Your
-                                        Message</label>
+                                    <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Your Message</label>
                                     <textarea id="message" name="message" rows="4" required
                                         class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"></textarea>
                                 </div>
@@ -925,9 +844,6 @@
         </div>
     </section>
 
-
-
-
     <!-- Footer -->
     <footer class="bg-blue-900 text-white pt-12 pb-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -937,8 +853,7 @@
                         <img src="my-favicon/favicon.svg" alt="SpatioAI Logo" class="h-8 w-8 mr-2">
                         <span class="text-xl font-bold text-white">SpatioAI Technologies</span>
                     </div>
-                    <p class="text-blue-200 max-w-xs">Leading the future of geospatial
-                        intelligence across Africa</p>
+                    <p class="text-blue-200 max-w-xs">Leading the future of geospatial intelligence across Africa</p>
                     <div class="flex space-x-4 mt-6">
                         <a href="https://www.linkedin.com/in/gis-member-a3b968354/"
                             class="text-blue-300 hover:text-white transition duration-300" target="_blank"
@@ -955,10 +870,6 @@
                             rel="noopener noreferrer">
                             <i class="fab fa-youtube text-2xl"></i>
                         </a>
-                        <!-- You can keep or remove the Twitter icon if you don't have an account -->
-                        <!-- <a href="#" class="text-blue-300 hover:text-white">
-                                <i class="fab fa-twitter"></i>
-                            </a> -->
                     </div>
                 </div>
 
@@ -988,8 +899,7 @@
                         <ul class="space-y-2">
                             <li><a href="#team" class="text-blue-200 hover:text-white">Our Team</a></li>
                             <li><a href="#" class="text-blue-200 hover:text-white">Partners</a></li>
-                            <li><a href="https://clementndome.github.io/ClmNios"
-                                    class="text-blue-200 hover:text-white">Careers</a></li>
+                            <li><a href="https://clementndome.github.io/ClmNios" class="text-blue-200 hover:text-white">Careers</a></li>
                             <li><a href="#contact" class="text-blue-200 hover:text-white">Contact</a></li>
                         </ul>
                     </div>
@@ -1008,16 +918,5 @@
     </footer>
 
     <script src="scripts.js"></script>
-
-    <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "Organization",
-          "name": "SpatioAI Technologies",
-          "description": "Geospatial AI solutions for climate resilience",
-          "url": "https://spatioaitech.github.io/home"
-        }
-        </script>
 </body>
-
 </html>
