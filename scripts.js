@@ -220,3 +220,170 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+
+
+// 3D Globe Visualization
+document.addEventListener('DOMContentLoaded', () => {
+    const globeContainer = document.getElementById('globe-visualization');
+    if (globeContainer) {
+        // added new
+
+        function setGlobeHeight() {
+        if (window.innerWidth < 768) {
+            globeContainer.style.height = '300px';
+        } else {
+            globeContainer.style.height = '500px';
+        }
+    }
+    
+    // Call initially and on resize
+    setGlobeHeight();
+    window.addEventListener('resize', setGlobeHeight);
+
+        // Scene setup
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, globeContainer.clientWidth / globeContainer.clientHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+        renderer.setSize(globeContainer.clientWidth, globeContainer.clientHeight);
+        globeContainer.appendChild(renderer.domElement);
+        
+        // Add ambient light
+        const ambientLight = new THREE.AmbientLight(0x404040);
+        scene.add(ambientLight);
+        
+        // Add directional light
+        const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+        directionalLight.position.set(1, 1, 1);
+        scene.add(directionalLight);
+        
+        // Create globe
+        const geometry = new THREE.SphereGeometry(5, 32, 32);
+        const texture = new THREE.TextureLoader().load('https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/earth_atmos_2048.jpg');
+        const bumpMap = new THREE.TextureLoader().load('https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/earth_normal_2048.jpg');
+        const material = new THREE.MeshPhongMaterial({
+            map: texture,
+            bumpMap: bumpMap,
+            bumpScale: 0.05,
+            specular: new THREE.Color('grey'),
+            shininess: 5
+        });
+        const globe = new THREE.Mesh(geometry, material);
+        scene.add(globe);
+        
+        // Add clouds
+        const cloudGeometry = new THREE.SphereGeometry(5.1, 32, 32);
+        const cloudTexture = new THREE.TextureLoader().load('https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/earth_clouds_1024.png');
+        const cloudMaterial = new THREE.MeshPhongMaterial({
+            map: cloudTexture,
+            transparent: true,
+            opacity: 0.4
+        });
+        const clouds = new THREE.Mesh(cloudGeometry, cloudMaterial);
+        scene.add(clouds);
+        
+        // Position camera
+        camera.position.z = 10;
+        
+        // Add orbit controls
+        const controls = new THREE.OrbitControls(camera, renderer.domElement);
+        controls.enableZoom = false;
+        controls.enablePan = false;
+        controls.autoRotate = true;
+        controls.autoRotateSpeed = 0.5;
+        
+        // Add data points (Africa-focused)
+        const dataPoints = [
+            { lat: -1.2921, lng: 36.8219, size: 0.2, color: 0xff0000 }, // Nairobi
+            { lat: -0.0236, lng: 37.9062, size: 0.15, color: 0x00ff00 }, // Mt. Kenya
+            { lat: -3.0674, lng: 37.3556, size: 0.25, color: 0x0000ff }, // Kilimanjaro
+            { lat: 9.1450, lng: 40.4897, size: 0.2, color: 0xffff00 }, // Addis Ababa
+            { lat: -26.2041, lng: 28.0473, size: 0.2, color: 0xff00ff } // Johannesburg
+        ];
+        
+        dataPoints.forEach(point => {
+            const phi = (90 - point.lat) * (Math.PI / 180);
+            const theta = (point.lng + 180) * (Math.PI / 180);
+            
+            const x = -(5.2) * Math.sin(phi) * Math.cos(theta);
+            const y = (5.2) * Math.cos(phi);
+            const z = (5.2) * Math.sin(phi) * Math.sin(theta);
+            
+            const geometry = new THREE.SphereGeometry(point.size, 16, 16);
+            const material = new THREE.MeshBasicMaterial({ color: point.color });
+            const sphere = new THREE.Mesh(geometry, material);
+            
+            sphere.position.set(x, y, z);
+            scene.add(sphere);
+            
+            // Add pulsing animation
+            let scale = 1;
+            const animatePulse = () => {
+                scale = 1 + Math.sin(Date.now() * 0.002) * 0.3;
+                sphere.scale.set(scale, scale, scale);
+                requestAnimationFrame(animatePulse);
+            };
+            animatePulse();
+        });
+        
+        // Add connecting lines (simulating data flows)
+        for (let i = 0; i < dataPoints.length - 1; i++) {
+            const phi1 = (90 - dataPoints[i].lat) * (Math.PI / 180);
+            const theta1 = (dataPoints[i].lng + 180) * (Math.PI / 180);
+            const x1 = -(5.1) * Math.sin(phi1) * Math.cos(theta1);
+            const y1 = (5.1) * Math.cos(phi1);
+            const z1 = (5.1) * Math.sin(phi1) * Math.sin(theta1);
+            
+            const phi2 = (90 - dataPoints[i+1].lat) * (Math.PI / 180);
+            const theta2 = (dataPoints[i+1].lng + 180) * (Math.PI / 180);
+            const x2 = -(5.1) * Math.sin(phi2) * Math.cos(theta2);
+            const y2 = (5.1) * Math.cos(phi2);
+            const z2 = (5.1) * Math.sin(phi2) * Math.sin(theta2);
+            
+            const curve = new THREE.CatmullRomCurve3([
+                new THREE.Vector3(x1, y1, z1),
+                new THREE.Vector3(0, 0, 0),
+                new THREE.Vector3(x2, y2, z2)
+            ]);
+            
+            const points = curve.getPoints(50);
+            const geometry = new THREE.BufferGeometry().setFromPoints(points);
+            const material = new THREE.LineBasicMaterial({ 
+                color: 0x00ffff,
+                transparent: true,
+                opacity: 0.6
+            });
+            
+            const line = new THREE.Line(geometry, material);
+            scene.add(line);
+            
+            // Animate the line
+            let progress = 0;
+            const animateLine = () => {
+                progress = (progress + 0.002) % 1;
+                const visiblePoints = Math.floor(points.length * progress);
+                const visibleGeometry = new THREE.BufferGeometry().setFromPoints(points.slice(0, visiblePoints));
+                line.geometry.dispose();
+                line.geometry = visibleGeometry;
+                requestAnimationFrame(animateLine);
+            };
+            animateLine();
+        }
+        
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            camera.aspect = globeContainer.clientWidth / globeContainer.clientHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(globeContainer.clientWidth, globeContainer.clientHeight);
+        });
+        
+        // Animation loop
+        const animate = () => {
+            requestAnimationFrame(animate);
+            controls.update();
+            clouds.rotation.y += 0.0005;
+            renderer.render(scene, camera);
+        };
+        animate();
+    }
+});

@@ -365,3 +365,69 @@ nav {
         display: none;
     }
 }
+
+
+/* Add this to your styles.css file */
+
+/* Hero Section Mobile Fixes */
+@media (max-width: 768px) {
+  .hero-gradient {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    min-height: 100vh; /* Ensure it takes full viewport height */
+  }
+  
+  .globe-container {
+    height: 300px !important;
+    margin-top: 2rem;
+  }
+  
+  #hero .md\:flex {
+    flex-direction: column;
+  }
+  
+  #hero .md\:w-1\/2 {
+    width: 100%;
+    padding: 0 1rem; /* Add some padding */
+  }
+  
+  #hero h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  
+  #hero p.text-xl {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero-gradient::before {
+    background: 
+      radial-gradient(circle at 20% 10%, rgba(255,255,255,0.1) 0%, transparent 30%),
+      radial-gradient(circle at 80% 90%, rgba(255,255,255,0.1) 0%, transparent 30%);
+  }
+  
+  /* Fix button layout on mobile */
+  #hero .flex-col.sm\:flex-row {
+    flex-direction: column;
+  }
+  
+  #hero .flex-col.sm\:flex-row .cta-pulse,
+  #hero .flex-col.sm\:flex-row a {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+  /* Adjust the "Why Choose SpatioAI" box */
+  #hero .bg-white.bg-opacity-10 {
+    padding: 1.5rem;
+  }
+  
+  /* Ensure text is readable on mobile */
+  #hero .text-blue-100,
+  #hero .text-blue-50,
+  #hero .text-blue-200 {
+    color: white !important;
+  }
+}
