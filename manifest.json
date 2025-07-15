@@ -14,8 +14,8 @@
       "type": "image/png"
     },
     {
-      "src": "my-favicon/favicon-512x512.png",
-      "sizes": "512x512",
+      "src": "my-favicon/favicon-96x96.png",
+      "sizes": "96x96",
       "type": "image/png"
     }
   ]

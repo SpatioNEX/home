@@ -66,49 +66,47 @@
 
 <body class="font-sans bg-gray-50">
     <!-- Navigation -->
-    <!-- Navigation -->
-<nav class="bg-white shadow-lg sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16">
-            <!-- Logo & Brand Name -->
-            <div class="flex items-center">
-                <div class="flex-shrink-0 flex items-center">
-                    <a href="#hero" class="flex items-center">
-                        <img src="my-favicon/favicon.svg" alt="SpatioAI Logo" class="h-8 w-8 mr-2">
-                        <span class="text-xl font-bold text-blue-800">SpatioAI Tech</span>
-                    </a>
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <a href="#hero" class="flex items-center">
+                            <img src="my-favicon/favicon.svg" alt="SpatioAI Logo" class="h-8 w-8 mr-2">
+                            <span class="text-xl font-bold text-blue-800">SpatioAI Tech</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="flex items-center">
+                    <div class="hidden md:flex md:space-x-8">
+                        <a href="#solutions" class="text-blue-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Solutions</a>
+                        <a href="#technology" class="text-blue-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Technology</a>
+                        <a href="#team" class="text-blue-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Team</a>
+                        <a href="#impact" class="text-blue-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Impact</a>
+                        <a href="#contact" class="text-blue-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Contact</a>
+                    </div>
+
+                    <div class="-mr-2 flex items-center md:hidden">
+                        <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-blue-900 hover:text-blue-600 hover:bg-blue-50 focus:outline-none">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
 
-            <!-- Desktop Navigation (Hidden on Mobile) -->
-            <div class="hidden md:flex md:items-center md:space-x-8">
-                <a href="#solutions" class="text-blue-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Solutions</a>
-                <a href="#technology" class="text-blue-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Technology</a>
-                <a href="#team" class="text-blue-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Team</a>
-                <a href="#impact" class="text-blue-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Impact</a>
-                <a href="#contact" class="text-blue-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Contact</a>
-            </div>
-
-            <!-- Mobile Menu Button (Visible on Mobile) -->
-            <div class="flex items-center md:hidden">
-                <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-blue-900 hover:text-blue-600 hover:bg-blue-50 focus:outline-none">
-                    <i class="fas fa-bars"></i>
-                </button>
+            <!-- Mobile menu -->
+            <div class="hidden md:hidden" id="mobile-menu">
+                <div class="pt-2 pb-3 space-y-1">
+                    <a href="#solutions" class="block px-3 py-2 text-base font-medium text-blue-900 hover:text-blue-600 hover:bg-blue-50">Solutions</a>
+                    <a href="#technology" class="block px-3 py-2 text-base font-medium text-blue-900 hover:text-blue-600 hover:bg-blue-50">Technology</a>
+                    <a href="#team" class="block px-3 py-2 text-base font-medium text-blue-900 hover:text-blue-600 hover:bg-blue-50">Team</a>
+                    <a href="#impact" class="block px-3 py-2 text-base font-medium text-blue-900 hover:text-blue-600 hover:bg-blue-50">Impact</a>
+                    <a href="#contact" class="block px-3 py-2 text-base font-medium text-blue-900 hover:text-blue-600 hover:bg-blue-50">Contact</a>
+                </div>
             </div>
         </div>
-    </div>
-
-    <!-- Mobile Menu (Hidden by Default) -->
-    <div class="hidden md:hidden" id="mobile-menu">
-        <div class="pt-2 pb-3 space-y-1">
-            <a href="#solutions" class="block px-3 py-2 text-base font-medium text-blue-900 hover:text-blue-600 hover:bg-blue-50">Solutions</a>
-            <a href="#technology" class="block px-3 py-2 text-base font-medium text-blue-900 hover:text-blue-600 hover:bg-blue-50">Technology</a>
-            <a href="#team" class="block px-3 py-2 text-base font-medium text-blue-900 hover:text-blue-600 hover:bg-blue-50">Team</a>
-            <a href="#impact" class="block px-3 py-2 text-base font-medium text-blue-900 hover:text-blue-600 hover:bg-blue-50">Impact</a>
-            <a href="#contact" class="block px-3 py-2 text-base font-medium text-blue-900 hover:text-blue-600 hover:bg-blue-50">Contact</a>
-        </div>
-    </div>
-</nav>
+    </nav>
 
     <!-- Hero Section -->
     <section id="hero" class="hero-gradient text-white">
