@@ -1,47 +1,30 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SpatioAI Technologies: AI-powered geospatial solutions for climate resilience in Africa. Forest monitoring, flood prediction, and smart agriculture systems.">
     <link rel="canonical" href="https://spatioaitech.github.io/home" />
-
-    <!-- Add to index.html & team.html <head> -->
-    <meta name="description"
-        content="SpatioAI Technologies: AI-powered geospatial solutions for climate resilience in Africa. Forest monitoring, flood prediction, and smart agriculture systems.">
-    <link rel="canonical" href="https://spatioaitech.github.io/home" />
-
-    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' https://cdn.tailwindcss.com https://api.mapbox.com https://cdnjs.cloudflare.com 'unsafe-inline'; style-src 'self' https://cdn.tailwindcss.com https://cdnjs.cloudflare.com 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' https://cdnjs.cloudflare.com; connect-src 'self' https://api.mapbox.com;"> -->
-    <!-- <meta http-equiv="Content-Security-Policy" content="
-    default-src 'self' https:;
-    script-src 'self' https://cdn.tailwindcss.com https://api.mapbox.com https://cdnjs.cloudflare.com 'unsafe-inline';
-    style-src 'self' https://cdn.tailwindcss.com https://cdnjs.cloudflare.com 'unsafe-inline';
-    img-src 'self' data: https:;
-    font-src 'self' https://cdnjs.cloudflare.com;
-    connect-src 'self' https://api.mapbox.com https://formspree.io;
-    form-action 'self' https://formspree.io;
-"> -->
-    <link rel="manifest" href="/manifest.json">
 
     <title>SpatioAI Technologies | Geospatial Intelligence for Climate Resilience</title>
+    
     <!-- Preload social sharing image -->
     <link rel="preload" as="image" href="https://spatioaitech.github.io/home/images/spatioai.webp">
 
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:title" content="SpatioAI Technologies | Geospatial Intelligence for Climate Resilience">
-    <meta property="og:description"
-        content="Leading the future of geospatial intelligence across Africa with AI-powered solutions for climate resilience and environmental monitoring.">
+    <meta property="og:description" content="Leading the future of geospatial intelligence across Africa with AI-powered solutions for climate resilience and environmental monitoring.">
     <meta property="og:image" content="https://spatioaitech.github.io/home/images/spatioai.webp">
     <meta property="og:url" content="https://spatioaitech.github.io/home/">
     <meta property="og:type" content="website">
 
-    <!-- Twitter Card Meta Tags (optional) -->
+    <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="SpatioAI Technologies | Geospatial Intelligence for Climate Resilience">
-    <meta name="twitter:description"
-        content="Leading the future of geospatial intelligence across Africa with AI-powered solutions for climate resilience and environmental monitoring.">
+    <meta name="twitter:description" content="Leading the future of geospatial intelligence across Africa with AI-powered solutions for climate resilience and environmental monitoring.">
     <meta name="twitter:image" content="https://spatioaitech.github.io/home/images/spatioai.webp">
-
 
     <!-- Favicon links -->
     <link rel="icon" type="image/png" href="my-favicon/favicon-96x96.png" sizes="96x96" />
@@ -49,17 +32,16 @@
     <link rel="shortcut icon" href="my-favicon/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="my-favicon/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="SpatioAI tech" />
-    <link rel="manifest" href="my-favicon/site.webmanifest" />
+    <link rel="manifest" href="/manifest.json">
 
     <script src="https://cdn.tailwindcss.com"></script>
-
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
 
     <!-- for mapbox -->
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css' rel='stylesheet' />
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js'></script>
+    
     <!-- Google Search Console Verification -->
     <meta name="google-site-verification" content="B0zSmEEA_HHhTaCbQI-LC6_jiKAlhxaGgRxvN-2xXwg" />
 
@@ -71,24 +53,16 @@
         gtag('js', new Date());
         gtag('config', 'G-927EH832Q4');
     </script>
+    
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Clement Ndome",
-      "jobTitle": "Lead AI/ML & GIS Developer",
-      "url": "https://spatioaitech.github.io/home/team.html#clement",
-      "sameAs": [
-        "https://www.linkedin.com/in/gis-member-a3b968354/",
-        "https://github.com/SpatioAITech"
-      ],
-      "worksFor": {
-        "@type": "Organization",
-        "name": "SpatioAI Technologies"
-      }
+      "@type": "Organization",
+      "name": "SpatioAI Technologies",
+      "description": "Geospatial AI solutions for climate resilience",
+      "url": "https://spatioaitech.github.io/home"
     }
     </script>
-
 </head>
 
 <body class="font-sans bg-gray-50">
@@ -107,67 +81,40 @@
 
                 <div class="flex items-center">
                     <div class="hidden md:flex md:space-x-8">
-                        <!-- <a href="#about"
-                            class="text-blue-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">About</a> -->
-                        <a href="#solutions"
-                            class="text-blue-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Solutions</a>
-                        <a href="#technology"
-                            class="text-blue-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Technology</a>
+                        <a href="#solutions" class="text-blue-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Solutions</a>
+                        <a href="#technology" class="text-blue-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Technology</a>
                         <a href="#team" class="text-blue-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Team</a>
-                        <a href="#impact"
-                            class="text-blue-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Impact</a>
-                        <a href="#contact"
-                            class="text-blue-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Contact</a>
-                        <!-- <a href="#contact"
-                            class="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-6 py-2 rounded-md text-sm font-medium transition duration-300">
-                            <i class="fas fa-calendar-check mr-2"></i> Book Consultation</a>
-                    </div> -->
+                        <a href="#impact" class="text-blue-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Impact</a>
+                        <a href="#contact" class="text-blue-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Contact</a>
+                    </div>
 
-
-
-                        <div class="-mr-2 flex items-center md:hidden">
-                            <button type="button" id="mobile-menu-button"
-                                class="inline-flex items-center justify-center p-2 rounded-md text-blue-900 hover:text-blue-600 hover:bg-blue-50 focus:outline-none">
-                                <i class="fas fa-bars"></i>
-                            </button>
-                        </div>
+                    <div class="-mr-2 flex items-center md:hidden">
+                        <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-blue-900 hover:text-blue-600 hover:bg-blue-50 focus:outline-none">
+                            <i class="fas fa-bars"></i>
+                        </button>
                     </div>
                 </div>
             </div>
 
-            <!-- Mobile menu remains the same -->
             <!-- Mobile menu -->
             <div class="hidden md:hidden" id="mobile-menu">
                 <div class="pt-2 pb-3 space-y-1">
-                    <a href="#solutions"
-                        class="block px-3 py-2 text-base font-medium text-blue-900 hover:text-blue-600 hover:bg-blue-50">Solutions</a>
-                    <a href="#technology"
-                        class="block px-3 py-2 text-base font-medium text-blue-900 hover:text-blue-600 hover:bg-blue-50">Technology</a>
-                    <a href="#team"
-                        class="block px-3 py-2 text-base font-medium text-blue-900 hover:text-blue-600 hover:bg-blue-50">Team</a>
-                    <a href="#impact"
-                        class="block px-3 py-2 text-base font-medium text-blue-900 hover:text-blue-600 hover:bg-blue-50">Impact</a>
-                    <a href="#contact"
-                        class="block px-3 py-2 text-base font-medium text-blue-900 hover:text-blue-600 hover:bg-blue-50">Contact</a>
-                    <!-- <a href="#contact" 
-                    class="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-6 py-2 rounded-md text-sm font-medium transition duration-300">
-                    <i class="fas fa-calendar-check mr-2"></i> Book Consultation
-                 </a> -->
-
+                    <a href="#solutions" class="block px-3 py-2 text-base font-medium text-blue-900 hover:text-blue-600 hover:bg-blue-50">Solutions</a>
+                    <a href="#technology" class="block px-3 py-2 text-base font-medium text-blue-900 hover:text-blue-600 hover:bg-blue-50">Technology</a>
+                    <a href="#team" class="block px-3 py-2 text-base font-medium text-blue-900 hover:text-blue-600 hover:bg-blue-50">Team</a>
+                    <a href="#impact" class="block px-3 py-2 text-base font-medium text-blue-900 hover:text-blue-600 hover:bg-blue-50">Impact</a>
+                    <a href="#contact" class="block px-3 py-2 text-base font-medium text-blue-900 hover:text-blue-600 hover:bg-blue-50">Contact</a>
                 </div>
             </div>
+        </div>
     </nav>
 
-    <!-- Hero + About Combined Section -->
+    <!-- Hero Section -->
     <section id="hero" class="hero-gradient text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
             <div class="md:flex items-center gap-12">
                 <div class="md:w-1/2 mb-10 md:mb-0">
                     <div class="mb-8">
-                        <!-- <div class="flex items-center mb-6">
-                            <img src="my-favicon/favicon.svg" alt="SpatioAI Logo" class="h-10 w-10 mr-3">
-                            <span class="text-2xl font-bold text-white">SPATIOAI TECHNOLOGIES</span> 
-                        </div> -->
                         <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
                             <span class="block text-blue-200 mb-2">AI-Powered</span>
                             Geospatial Intelligence for Africa's Climate Resilience
@@ -179,18 +126,15 @@
                     </div>
 
                     <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mb-12">
-                        <a href="#contact"
-                            class="bg-white text-blue-800 hover:bg-blue-50 px-6 py-3 rounded-md text-lg font-semibold text-center transition duration-300 flex items-center justify-center">
+                        <a href="#contact" class="bg-white text-blue-800 hover:bg-blue-50 px-6 py-3 rounded-md text-lg font-semibold text-center transition duration-300 flex items-center justify-center">
                             <i class="fas fa-calendar-check mr-2"></i> Book Consultation
                         </a>
-                        <a href="#solutions"
-                            class="border-2 border-white hover:bg-white hover:text-blue-800 px-6 py-3 rounded-md text-lg font-semibold text-center transition duration-300 flex items-center justify-center">
+                        <a href="#solutions" class="border-2 border-white hover:bg-white hover:text-blue-800 px-6 py-3 rounded-md text-lg font-semibold text-center transition duration-300 flex items-center justify-center">
                             <i class="fas fa-chart-line mr-2"></i> Our Solutions
                         </a>
                     </div>
 
-                    <div
-                        class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-6 border border-white border-opacity-20">
+                    <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-6 border border-white border-opacity-20">
                         <h3 class="text-xl font-semibold mb-4 text-blue-100">Why Choose SpatioAI?</h3>
                         <div class="space-y-3">
                             <div class="flex items-start">
@@ -213,31 +157,18 @@
                                     <p class="text-blue-50">90% accuracy in environmental monitoring</p>
                                 </div>
                             </div>
-                            <!-- <div class="flex items-start">
-                                    <div class="flex-shrink-0 mt-1">
-                                        <div class="h-5 w-5 rounded-full bg-blue-400 flex items-center justify-center">
-                                            <i class="fas fa-check text-white text-xs"></i>
-                                        </div>
-                                    </div>
-                                    <div class="ml-3">
-                                        <p class="text-blue-50">Recognized by Kenya AI Strategy 2025-2030</p>
-                                    </div>
-                                </div> -->
                         </div>
                     </div>
                 </div>
 
                 <div class="md:w-1/2 relative">
-                    <div
-                        class="map-container rounded-xl overflow-hidden shadow-2xl relative border-4 border-white border-opacity-20">
+                    <div class="map-container rounded-xl overflow-hidden shadow-2xl relative border-4 border-white border-opacity-20">
                         <div id="map" class="h-full w-full"></div>
-                        <div
-                            class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4 text-white">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4 text-white">
                             <h3 class="text-xl font-bold mb-1">Real-time Kenya Climate Monitoring</h3>
                             <p class="text-sm opacity-80">Active forest cover, water sources, and risk areas</p>
                         </div>
-                        <div class="absolute top-4 right-4 bg-white bg-opacity-90 rounded-full p-2 shadow-md cursor-pointer hover:bg-opacity-100 transition duration-300"
-                            id="map-zoom">
+                        <div class="absolute top-4 right-4 bg-white bg-opacity-90 rounded-full p-2 shadow-md cursor-pointer hover:bg-opacity-100 transition duration-300" id="map-zoom">
                             <i class="fas fa-expand text-blue-800"></i>
                         </div>
                     </div>
@@ -269,7 +200,6 @@
             </div>
         </div>
     </section>
-
 
     <!-- Compact Mission Section -->
     <section id="mission" class="py-12 bg-gray-50">
@@ -315,46 +245,15 @@
             </div>
         </div>
     </section>
-    <!-- Partners Section
-    <section class="bg-gray-100 py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-center text-gray-500 text-sm font-semibold uppercase tracking-wide mb-8">Aligned with
-                Kenya's Climate Action Partners</h2>
-            <div class="grid grid-cols-2 md:grid-cols-5 gap-8 items-center">
-                <div class="flex justify-center">
-                    <img src="https://via.placeholder.com/150x60?text=Kenya+AI+Strategy" alt="Kenya AI Strategy"
-                        class="h-12 opacity-70 hover:opacity-100 transition duration-300">
-                </div>
-                <div class="flex justify-center">
-                    <img src="https://via.placeholder.com/150x60?text=UK-Kenya+AI+Fund" alt="UK-Kenya AI Challenge Fund"
-                        class="h-12 opacity-70 hover:opacity-100 transition duration-300">
-                </div>
-                <div class="flex justify-center">
-                    <img src="https://via.placeholder.com/150x60?text=KFS" alt="Kenya Forest Service"
-                        class="h-12 opacity-70 hover:opacity-100 transition duration-300">
-                </div>
-                <div class="flex justify-center">
-                    <img src="https://via.placeholder.com/150x60?text=Ministry+of+Water" alt="Ministry of Water"
-                        class="h-12 opacity-70 hover:opacity-100 transition duration-300">
-                </div>
-                <div class="flex justify-center">
-                    <img src="https://via.placeholder.com/150x60?text=UNDP" alt="UNDP Kenya"
-                        class="h-12 opacity-70 hover:opacity-100 transition duration-300">
-                </div>
-            </div>
-        </div>
-    </section> -->
 
     <!-- Solutions Section -->
-    <!-- Gradient Header Section -->
     <section id="solutions" class="relative overflow-hidden">
         <!-- Gradient Background -->
         <div class="absolute inset-0 bg-gradient-to-b from-blue-50/30 to-white z-0"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 relative z-10">
             <!-- Text Content with Subtle Background -->
-            <div
-                class="bg-gradient-to-r from-blue-100 to-blue-50 rounded-xl p-6 md:p-8 mb-10 border border-blue-200 shadow-sm">
+            <div class="bg-gradient-to-r from-blue-100 to-blue-50 rounded-xl p-6 md:p-8 mb-10 border border-blue-200 shadow-sm">
                 <h2 class="text-2xl md:text-3xl font-bold text-blue-800 mb-3">Our Climate Intelligence Solutions</h2>
                 <p class="text-blue-600 max-w-3xl">
                     Fusing satellite imagery, machine learning, and socio-economic indicators to map and monitor Kenya's
@@ -364,8 +263,7 @@
 
             <div class="dashboard-grid">
                 <!-- Feature 1 - Forest Monitoring -->
-                <div
-                    class="feature-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 ease-in-out relative group">
+                <div class="feature-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 ease-in-out relative group">
                     <div class="h-48 bg-gray-800 overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
                             alt="Forest Monitoring"
@@ -377,25 +275,20 @@
                             <div class="bg-green-100 p-3 rounded-full mr-4">
                                 <i class="fas fa-tree text-green-600 text-xl"></i>
                             </div>
-                            <h3 class="text-xl font-semibold text-white group-hover:text-green-50">Forest Monitoring
-                            </h3>
+                            <h3 class="text-xl font-semibold text-white group-hover:text-green-50">Forest Monitoring</h3>
                         </div>
                         <p class="text-gray-200 mb-4">AI-powered analysis of satellite imagery to track deforestation
                             and forest degradation with 90% accuracy.</p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="bg-green-600 text-white px-3 py-1 rounded-full text-xs font-medium">Land Cover
-                                Prediction</span>
-                            <span class="bg-green-600 text-white px-3 py-1 rounded-full text-xs font-medium">Carbon
-                                Sequestration</span>
-                            <span
-                                class="bg-green-600 text-white px-3 py-1 rounded-full text-xs font-medium">Biodiversity</span>
+                            <span class="bg-green-600 text-white px-3 py-1 rounded-full text-xs font-medium">Land Cover Prediction</span>
+                            <span class="bg-green-600 text-white px-3 py-1 rounded-full text-xs font-medium">Carbon Sequestration</span>
+                            <span class="bg-green-600 text-white px-3 py-1 rounded-full text-xs font-medium">Biodiversity</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Feature 2 - Water Resource Intelligence -->
-                <div
-                    class="feature-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 ease-in-out relative group">
+                <div class="feature-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 ease-in-out relative group">
                     <div class="h-48 bg-gray-800 overflow-hidden">
                         <img src="images/water_resource.webp" alt="Water Resource Intelligence"
                             class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
@@ -406,25 +299,20 @@
                             <div class="bg-blue-100 p-3 rounded-full mr-4">
                                 <i class="fas fa-tint text-blue-600 text-xl"></i>
                             </div>
-                            <h3 class="text-xl font-semibold text-white group-hover:text-blue-50">Water Resource
-                                Intelligence</h3>
+                            <h3 class="text-xl font-semibold text-white group-hover:text-blue-50">Water Resource Intelligence</h3>
                         </div>
                         <p class="text-gray-200 mb-4">FLIPS flood-monitoring system and groundwater-resilience models
                             for drought prediction.</p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-medium">Flood
-                                Prediction</span>
-                            <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-medium">Water
-                                Stress</span>
-                            <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-medium">Aquifer
-                                Mapping</span>
+                            <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-medium">Flood Prediction</span>
+                            <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-medium">Water Stress</span>
+                            <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-medium">Aquifer Mapping</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Feature 3 - Land Degradation -->
-                <div
-                    class="feature-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 ease-in-out relative group">
+                <div class="feature-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 ease-in-out relative group">
                     <div class="h-48 bg-gray-800 overflow-hidden">
                         <img src="images/land_degradation.webp" alt="Land Degradation"
                             class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
@@ -435,26 +323,20 @@
                             <div class="bg-yellow-100 p-3 rounded-full mr-4">
                                 <i class="fas fa-mountain text-yellow-600 text-xl"></i>
                             </div>
-                            <h3 class="text-xl font-semibold text-white group-hover:text-yellow-50">Land Degradation
-                            </h3>
+                            <h3 class="text-xl font-semibold text-white group-hover:text-yellow-50">Land Degradation</h3>
                         </div>
                         <p class="text-gray-200 mb-4">Early warning system for soil erosion and desertification using
                             GEE-based data pipelines.</p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="bg-yellow-600 text-white px-3 py-1 rounded-full text-xs font-medium">Soil
-                                Health</span>
-                            <span class="bg-yellow-600 text-white px-3 py-1 rounded-full text-xs font-medium">Erosion
-                                Risk</span>
-                            <span
-                                class="bg-yellow-600 text-white px-3 py-1 rounded-full text-xs font-medium">Sustainable
-                                Farming</span>
+                            <span class="bg-yellow-600 text-white px-3 py-1 rounded-full text-xs font-medium">Soil Health</span>
+                            <span class="bg-yellow-600 text-white px-3 py-1 rounded-full text-xs font-medium">Erosion Risk</span>
+                            <span class="bg-yellow-600 text-white px-3 py-1 rounded-full text-xs font-medium">Sustainable Farming</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Updated Feature 4 - Climate Risk Mapping with local image -->
-                <div
-                    class="feature-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 ease-in-out relative group">
+                <!-- Feature 4 - Climate Risk Mapping -->
+                <div class="feature-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 ease-in-out relative group">
                     <div class="h-48 bg-gray-800 overflow-hidden">
                         <img src="images/climate_risk.webp" alt="Climate Risk Intelligence Dashboard"
                             class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
@@ -466,26 +348,21 @@
                             <div class="bg-red-100 p-3 rounded-full mr-4">
                                 <i class="fas fa-fire text-red-600 text-xl"></i>
                             </div>
-                            <h3 class="text-xl font-semibold text-white group-hover:text-red-50">Climate Risk
-                                Intelligence</h3>
+                            <h3 class="text-xl font-semibold text-white group-hover:text-red-50">Climate Risk Intelligence</h3>
                         </div>
                         <p class="text-gray-200 mb-4">AI-powered predictive analytics for drought, floods and extreme
                             weather events with 85% accuracy across East Africa. Integrated with national early warning
                             systems.</p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="bg-red-600 text-white px-3 py-1 rounded-full text-xs font-medium">Drought
-                                Prediction</span>
-                            <span class="bg-red-600 text-white px-3 py-1 rounded-full text-xs font-medium">Flood
-                                Modeling</span>
-                            <span class="bg-red-600 text-white px-3 py-1 rounded-full text-xs font-medium">Risk
-                                Assessment</span>
+                            <span class="bg-red-600 text-white px-3 py-1 rounded-full text-xs font-medium">Drought Prediction</span>
+                            <span class="bg-red-600 text-white px-3 py-1 rounded-full text-xs font-medium">Flood Modeling</span>
+                            <span class="bg-red-600 text-white px-3 py-1 rounded-full text-xs font-medium">Risk Assessment</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Feature 5 - Smart Agriculture -->
-                <div
-                    class="feature-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 ease-in-out relative group">
+                <div class="feature-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 ease-in-out relative group">
                     <div class="h-48 bg-gray-800 overflow-hidden">
                         <img src="images/smart_agriculture.webp" alt="Smart Agriculture"
                             class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
@@ -496,25 +373,20 @@
                             <div class="bg-purple-100 p-3 rounded-full mr-4">
                                 <i class="fas fa-tractor text-purple-600 text-xl"></i>
                             </div>
-                            <h3 class="text-xl font-semibold text-white group-hover:text-purple-50">Smart Agriculture
-                            </h3>
+                            <h3 class="text-xl font-semibold text-white group-hover:text-purple-50">Smart Agriculture</h3>
                         </div>
                         <p class="text-gray-200 mb-4">Precision farming solutions using satellite data and IoT sensors
                             to optimize crop yields and resource use.</p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="bg-purple-600 text-white px-3 py-1 rounded-full text-xs font-medium">Crop
-                                Health</span>
-                            <span class="bg-purple-600 text-white px-3 py-1 rounded-full text-xs font-medium">Irrigation
-                                Planning</span>
-                            <span class="bg-purple-600 text-white px-3 py-1 rounded-full text-xs font-medium">Yield
-                                Prediction</span>
+                            <span class="bg-purple-600 text-white px-3 py-1 rounded-full text-xs font-medium">Crop Health</span>
+                            <span class="bg-purple-600 text-white px-3 py-1 rounded-full text-xs font-medium">Irrigation Planning</span>
+                            <span class="bg-purple-600 text-white px-3 py-1 rounded-full text-xs font-medium">Yield Prediction</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Feature 6 - Policy Dashboards -->
-                <div
-                    class="feature-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 ease-in-out relative group">
+                <div class="feature-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 ease-in-out relative group">
                     <div class="h-48 bg-gray-800 overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
                             alt="Policy Dashboards"
@@ -526,22 +398,19 @@
                             <div class="bg-indigo-100 p-3 rounded-full mr-4">
                                 <i class="fas fa-chart-line text-indigo-600 text-xl"></i>
                             </div>
-                            <h3 class="text-xl font-semibold text-white group-hover:text-indigo-50">Policy Dashboards
-                            </h3>
+                            <h3 class="text-xl font-semibold text-white group-hover:text-indigo-50">Policy Dashboards</h3>
                         </div>
                         <p class="text-gray-200 mb-4">Customizable visualization tools aligned with Kenya AI Strategy
                             2025-2030.</p>
                         <div class="flex flex-wrap gap-2">
-                            <span
-                                class="bg-indigo-600 text-white px-3 py-1 rounded-full text-xs font-medium">KPIs</span>
-                            <span class="bg-indigo-600 text-white px-3 py-1 rounded-full text-xs font-medium">Scenario
-                                Modeling</span>
-                            <span
-                                class="bg-indigo-600 text-white px-3 py-1 rounded-full text-xs font-medium">Reporting</span>
+                            <span class="bg-indigo-600 text-white px-3 py-1 rounded-full text-xs font-medium">KPIs</span>
+                            <span class="bg-indigo-600 text-white px-3 py-1 rounded-full text-xs font-medium">Scenario Modeling</span>
+                            <span class="bg-indigo-600 text-white px-3 py-1 rounded-full text-xs font-medium">Reporting</span>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
     </section>
 
     <!-- Technology Section -->
@@ -556,8 +425,7 @@
                     <div class="space-y-6">
                         <div class="flex">
                             <div class="flex-shrink-0">
-                                <div
-                                    class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-100 text-blue-600">
+                                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-100 text-blue-600">
                                     <i class="fas fa-satellite-dish text-xl"></i>
                                 </div>
                             </div>
@@ -570,8 +438,7 @@
 
                         <div class="flex">
                             <div class="flex-shrink-0">
-                                <div
-                                    class="flex items-center justify-center h-12 w-12 rounded-md bg-green-100 text-green-600">
+                                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-green-100 text-green-600">
                                     <i class="fas fa-brain text-xl"></i>
                                 </div>
                             </div>
@@ -584,8 +451,7 @@
 
                         <div class="flex">
                             <div class="flex-shrink-0">
-                                <div
-                                    class="flex items-center justify-center h-12 w-12 rounded-md bg-yellow-100 text-yellow-600">
+                                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-yellow-100 text-yellow-600">
                                     <i class="fas fa-database text-xl"></i>
                                 </div>
                             </div>
@@ -614,8 +480,7 @@
                                 <!-- Pipeline Step 1 -->
                                 <div class="flex items-start">
                                     <div class="flex-shrink-0 bg-blue-100 rounded-full p-2">
-                                        <span
-                                            class="h-6 w-6 rounded-full bg-blue-600 text-white flex items-center justify-center">1</span>
+                                        <span class="h-6 w-6 rounded-full bg-blue-600 text-white flex items-center justify-center">1</span>
                                     </div>
                                     <div class="ml-4">
                                         <h4 class="text-lg font-medium text-blue-900">Data Acquisition</h4>
@@ -627,8 +492,7 @@
                                 <!-- Pipeline Step 2 -->
                                 <div class="flex items-start">
                                     <div class="flex-shrink-0 bg-blue-100 rounded-full p-2">
-                                        <span
-                                            class="h-6 w-6 rounded-full bg-blue-600 text-white flex items-center justify-center">2</span>
+                                        <span class="h-6 w-6 rounded-full bg-blue-600 text-white flex items-center justify-center">2</span>
                                     </div>
                                     <div class="ml-4">
                                         <h4 class="text-lg font-medium text-blue-900">Pre-processing</h4>
@@ -640,8 +504,7 @@
                                 <!-- Pipeline Step 3 -->
                                 <div class="flex items-start">
                                     <div class="flex-shrink-0 bg-blue-100 rounded-full p-2">
-                                        <span
-                                            class="h-6 w-6 rounded-full bg-blue-600 text-white flex items-center justify-center">3</span>
+                                        <span class="h-6 w-6 rounded-full bg-blue-600 text-white flex items-center justify-center">3</span>
                                     </div>
                                     <div class="ml-4">
                                         <h4 class="text-lg font-medium text-blue-900">AI Analysis</h4>
@@ -653,8 +516,7 @@
                                 <!-- Pipeline Step 4 -->
                                 <div class="flex items-start">
                                     <div class="flex-shrink-0 bg-blue-100 rounded-full p-2">
-                                        <span
-                                            class="h-6 w-6 rounded-full bg-blue-600 text-white flex items-center justify-center">4</span>
+                                        <span class="h-6 w-6 rounded-full bg-blue-600 text-white flex items-center justify-center">4</span>
                                     </div>
                                     <div class="ml-4">
                                         <h4 class="text-lg font-medium text-blue-900">Localization</h4>
@@ -666,8 +528,7 @@
                                 <!-- Pipeline Step 5 -->
                                 <div class="flex items-start">
                                     <div class="flex-shrink-0 bg-blue-100 rounded-full p-2">
-                                        <span
-                                            class="h-6 w-6 rounded-full bg-blue-600 text-white flex items-center justify-center">5</span>
+                                        <span class="h-6 w-6 rounded-full bg-blue-600 text-white flex items-center justify-center">5</span>
                                     </div>
                                     <div class="ml-4">
                                         <h4 class="text-lg font-medium text-blue-900">Delivery</h4>
@@ -683,7 +544,7 @@
         </div>
     </section>
 
-    <!-- Team Section in index.html -->
+    <!-- Team Section -->
     <section id="team" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -696,11 +557,9 @@
             <div class="grid grid-cols-2 md:grid-cols-5 gap-6 mb-12">
                 <!-- Team Member 1 -->
                 <a href="team.html#leadership" class="group text-center">
-                    <div
-                        class="relative mb-4 rounded-full overflow-hidden aspect-square w-32 h-32 mx-auto shadow-lg group-hover:shadow-xl transition duration-300">
+                    <div class="relative mb-4 rounded-full overflow-hidden aspect-square w-32 h-32 mx-auto shadow-lg group-hover:shadow-xl transition duration-300">
                         <img src="images/team/clement.webp" alt="Clement Ndome" class="w-full h-full object-cover">
-                        <div
-                            class="absolute inset-0 bg-blue-800 opacity-0 group-hover:opacity-30 transition duration-300">
+                        <div class="absolute inset-0 bg-blue-800 opacity-0 group-hover:opacity-30 transition duration-300">
                         </div>
                     </div>
                     <h3 class="text-lg font-semibold text-blue-900 group-hover:text-blue-600 transition duration-300">
@@ -710,11 +569,9 @@
 
                 <!-- Team Member 2 -->
                 <a href="team.html#leadership" class="group text-center">
-                    <div
-                        class="relative mb-4 rounded-full overflow-hidden aspect-square w-32 h-32 mx-auto shadow-lg group-hover:shadow-xl transition duration-300">
+                    <div class="relative mb-4 rounded-full overflow-hidden aspect-square w-32 h-32 mx-auto shadow-lg group-hover:shadow-xl transition duration-300">
                         <img src="images/team/francis.webp" alt="Francis Kigia" class="w-full h-full object-cover">
-                        <div
-                            class="absolute inset-0 bg-blue-800 opacity-0 group-hover:opacity-30 transition duration-300">
+                        <div class="absolute inset-0 bg-blue-800 opacity-0 group-hover:opacity-30 transition duration-300">
                         </div>
                     </div>
                     <h3 class="text-lg font-semibold text-blue-900 group-hover:text-blue-600 transition duration-300">
@@ -724,8 +581,7 @@
 
                 <!-- Team Member 3 -->
                 <a href="team.html#technical-team" class="group text-center">
-                    <div
-                        class="relative mb-4 rounded-full overflow-hidden aspect-square w-32 h-32 mx-auto shadow-lg group-hover:shadow-xl transition duration-300">
+                    <div class="relative mb-4 rounded-full overflow-hidden aspect-square w-32 h-32 mx-auto shadow-lg group-hover:shadow-xl transition duration-300">
                         <img src="images/team/joseph.webp" alt="Joseph Musyimi" class="w-full h-full object-cover">
                         <div
                             class="absolute inset-0 bg-blue-800 opacity-0 group-hover:opacity-30 transition duration-300">
