@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(response => {
                 if (response.ok) {
                     // Redirect to thank you page
-                    window.location.href = "https://spatioaitech.github.io/home/thank-you.html";
+                    window.location.href = "https://docs.spationex.com/thank-you.html";
                 } else {
                     throw new Error('Form submission failed');
                 }
@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 scale: 1.2
             })
             .setLngLat(officeLocation)
-            .setPopup(new mapboxgl.Popup().setHTML("<h3 class='font-bold text-blue-800'>SpatioAI Technologies</h3><p class='text-sm'>Senteu Plaza, Kilimani</p>"))
+            .setPopup(new mapboxgl.Popup().setHTML("<h3 class='font-bold text-blue-800'>SpatioNEX Technologies</h3><p class='text-sm'>Senteu Plaza, Kilimani</p>"))
             .addTo(map);
         });
     }
@@ -178,7 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
         installPrompt.className = 'fixed bottom-0 left-0 right-0 bg-blue-800 text-white p-4 flex justify-between items-center z-50';
         installPrompt.innerHTML = `
             <div>
-                <p class="font-medium">Install SpatioAI for a better experience?</p>
+                <p class="font-medium">Install SpatioNEX for a better experience?</p>
                 <p class="text-sm opacity-80">Add to your home screen for quick access</p>
             </div>
             <div class="flex space-x-2">
